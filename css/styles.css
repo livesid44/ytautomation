@@ -54,40 +54,40 @@ body {
 /* Hamburger Menu Button */
 .hamburger-menu {
     position: fixed;
-    top: 85px;
-    left: 15px;
+    top: 12px;
+    left: 85px;
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #CC0000;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     cursor: pointer;
-    z-index: 100;
+    z-index: 101;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5px;
     padding: 8px;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .hamburger-menu:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+    background: #B00000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hamburger-menu span {
-    width: 24px;
-    height: 3px;
+    width: 22px;
+    height: 2px;
     background-color: white;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 .hamburger-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger-menu.active span:nth-child(2) {
@@ -130,19 +130,26 @@ body {
 }
 
 .nav-item:hover {
-    background-color: #667eea;
-    color: #ffffff;
+    background-color: #f0f0f0;
+    color: #CC0000;
 }
 
 .nav-item.active {
-    background-color: #667eea;
+    background-color: #CC0000;
     color: #ffffff;
+    border-left: 4px solid #B00000;
 }
 
 .nav-item .icon {
-    font-size: 20px;
+    font-size: 18px;
     min-width: 20px;
     text-align: center;
+}
+
+.nav-item .icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
 }
 
 .nav-item span:not(.icon) {
