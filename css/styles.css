@@ -2187,3 +2187,127 @@ input:checked + .toggle-slider:before {
         transform: translateX(-100%);
     }
 }
+
+/* Additional Template Styles for Total Audit Count */
+.grey-bg {
+    background-color: #eeeff1;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.grey-bg-op {
+    background-color: rgba(238, 239, 241, 0.4);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.grey-bg-op ul {
+    padding-left: 1.2rem !important;
+}
+
+.grey-bg-op li {
+    margin-bottom: 5px !important;
+}
+
+.grey-dark {
+    background-color: #373737;
+    padding: 15px;
+    color: #fff;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.dark-text {
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 5px;
+    margin-right: 10px;
+    display: block;
+}
+
+.dark-text2 {
+    font-weight: normal;
+    font-size: 24px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.light-text {
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+.chart-main {
+    height: 235px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.chart-title {
+    color: #1a2e61;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#chart-container,
+#chart-container2 {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 4px;
+    color: #999;
+    font-size: 13px;
+}
+
+.float-end {
+    float: right;
+}
+
+.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+.p-1 {
+    padding: 0.25rem;
+}
+
+.clear-20 {
+    height: 20px;
+    width: 100%;
+    clear: both;
+}
+
+/* Fix for Bootstrap icons when not using Bootstrap */
+.bi::before {
+    font-family: 'bootstrap-icons' !important;
+}
+
+.bi-caret-up-fill::before {
+    content: "\f12f";
+}
+
+.bi-caret-down-fill::before {
+    content: "\f12d";
+}
