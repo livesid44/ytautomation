@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu" onclick="toggleSidebar()" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <div class="container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="logo">
-                <h2>QA Analytics</h2>
-                <p>AI-Powered Platform</p>
-            </div>
-            <nav class="nav-menu">
+        <aside class="sidebar" id="sidebar">
+<nav class="nav-menu">
                 <a href="index.html" class="nav-item" title="Dashboard">
                     <span class="icon">📊</span>
                     <span>Dashboard</span>
@@ -436,5 +439,29 @@
     </div>
 
     <script src="js/app.js"></script>
+
+
+    <script>
+
+
+        function toggleSidebar() {
+
+
+            const sidebar = document.getElementById('sidebar');
+
+
+            const hamburger = document.querySelector('.hamburger-menu');
+
+
+            sidebar.classList.toggle('expanded');
+
+
+            hamburger.classList.toggle('active');
+
+
+        }
+
+
+    </script>
 </body>
 </html>
