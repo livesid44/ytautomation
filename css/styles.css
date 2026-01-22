@@ -35,7 +35,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 70px;
+    width: 50px;
     background-color: #f6f6f6;
     color: #373737;
     padding: 0px;
@@ -55,7 +55,7 @@ body {
 .hamburger-menu {
     position: fixed;
     top: 12px;
-    left: 85px;
+    left: 10px;
     width: 40px;
     height: 40px;
     background: #CC0000;
@@ -168,7 +168,7 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-left: 70px;
+    margin-left: 50px;
     background: transparent;
     padding-top: 75px;
 }
