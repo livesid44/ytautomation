@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Designer - QA Analytics</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>QA Analytics</h2>
+                <p>AI-Powered Platform</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="dashboards.html" class="nav-item">
+                    <span class="icon">📈</span>
+                    <span>Quality Dashboards</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item">
+                    <span class="icon">😊</span>
+                    <span>Sentiment Analysis</span>
+                </a>
+                <a href="form-designer.html" class="nav-item active">
+                    <span class="icon">📝</span>
+                    <span>Form Designer</span>
+                </a>
+                <a href="call-audit.html" class="nav-item">
+                    <span class="icon">📞</span>
+                    <span>Call Audit</span>
+                </a>
+                <a href="tni-module.html" class="nav-item">
+                    <span class="icon">🎓</span>
+                    <span>TNI Module</span>
+                </a>
+                <a href="configuration.html" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Configuration</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <img src="images/logo-dark.png" alt="Logo" class="sys-logo">
+                </div>
+                <div class="header-right">
+                    <img src="images/Aura_logo.svg" alt="Aura Logo" class="micro-logo">
+                    <img src="images/techmlogo.svg" alt="Tech Logo" class="micro-logo">
+                    <div class="user-profile">
+                        <span>Admin User</span>
+                        <div class="avatar">AU</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-header">
+                <h1>Quality Evaluation Form Designer</h1>
+                <div class="page-header-actions">
+                    <button class="btn-secondary">Save as Draft</button>
+                    <button class="btn-primary">Publish Form</button>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="form-designer-layout">
+                    <!-- Form Library Sidebar -->
+                    <div class="form-library">
+                        <h3>Existing Forms</h3>
+                        <div class="search-box">
+                            <input type="text" placeholder="Search forms...">
+                        </div>
+                        <div class="form-list">
+                            <div class="form-item active">
+                                <h4>Customer Service Quality v2.0</h4>
+                                <p>Modified: Today</p>
+                                <span class="status-badge success">Published</span>
+                            </div>
+                            <div class="form-item">
+                                <h4>Sales Call Evaluation</h4>
+                                <p>Modified: 2 days ago</p>
+                                <span class="status-badge success">Published</span>
+                            </div>
+                            <div class="form-item">
+                                <h4>Technical Support v1.5</h4>
+                                <p>Modified: 1 week ago</p>
+                                <span class="status-badge warning">Draft</span>
+                            </div>
+                            <div class="form-item">
+                                <h4>Complaint Handling</h4>
+                                <p>Modified: 2 weeks ago</p>
+                                <span class="status-badge success">Published</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary btn-block">+ Create New Form</button>
+                    </div>
+
+                    <!-- Form Builder Canvas -->
+                    <div class="form-canvas">
+                        <div class="form-header-section">
+                            <input type="text" class="form-title-input" value="Customer Service Quality v2.0" placeholder="Form Title">
+                            <textarea class="form-description-input" placeholder="Form Description">Comprehensive evaluation form for customer service call quality assessment</textarea>
+                        </div>
+
+                        <div class="form-sections">
+                            <!-- Section 1 -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <input type="text" class="section-title" value="Call Opening & Introduction">
+                                    <div class="section-actions">
+                                        <button class="btn-icon">↑</button>
+                                        <button class="btn-icon">↓</button>
+                                        <button class="btn-icon">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="section-weight">
+                                    <label>Weight: <input type="number" value="15" min="0" max="100">%</label>
+                                </div>
+                                <div class="form-fields">
+                                    <div class="form-field">
+                                        <div class="field-header">
+                                            <span class="field-type-badge">Rating Scale</span>
+                                            <button class="btn-icon">✏️</button>
+                                            <button class="btn-icon">🗑️</button>
+                                        </div>
+                                        <label class="field-label">Greeted customer professionally</label>
+                                        <div class="rating-preview">
+                                            <span>1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5 ⭐</span>
+                                        </div>
+                                        <div class="field-weight">Weight: 50%</div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="field-header">
+                                            <span class="field-type-badge">Yes/No</span>
+                                            <button class="btn-icon">✏️</button>
+                                            <button class="btn-icon">🗑️</button>
+                                        </div>
+                                        <label class="field-label">Stated company name clearly</label>
+                                        <div class="field-weight">Weight: 25%</div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="field-header">
+                                            <span class="field-type-badge">Yes/No</span>
+                                            <button class="btn-icon">✏️</button>
+                                            <button class="btn-icon">🗑️</button>
+                                        </div>
+                                        <label class="field-label">Verified customer identity</label>
+                                        <div class="field-weight">Weight: 25%</div>
+                                    </div>
+                                    <button class="btn-secondary btn-sm">+ Add Field</button>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <input type="text" class="section-title" value="Problem Understanding">
+                                    <div class="section-actions">
+                                        <button class="btn-icon">↑</button>
+                                        <button class="btn-icon">↓</button>
+                                        <button class="btn-icon">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="section-weight">
+                                    <label>Weight: <input type="number" value="20" min="0" max="100">%</label>
+                                </div>
+                                <div class="form-fields">
+                                    <div class="form-field">
+                                        <div class="field-header">
+                                            <span class="field-type-badge">Rating Scale</span>
+                                            <button class="btn-icon">✏️</button>
+                                            <button class="btn-icon">🗑️</button>
+                                        </div>
+                                        <label class="field-label">Active listening demonstrated</label>
+                                        <div class="rating-preview">
+                                            <span>1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5 ⭐</span>
+                                        </div>
+                                        <div class="field-weight">Weight: 40%</div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="field-header">
+                                            <span class="field-type-badge">Rating Scale</span>
+                                            <button class="btn-icon">✏️</button>
+                                            <button class="btn-icon">🗑️</button>
+                                        </div>
+                                        <label class="field-label">Asked clarifying questions</label>
+                                        <div class="rating-preview">
+                                            <span>1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5 ⭐</span>
+                                        </div>
+                                        <div class="field-weight">Weight: 30%</div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="field-header">
+                                            <span class="field-type-badge">Rating Scale</span>
+                                            <button class="btn-icon">✏️</button>
+                                            <button class="btn-icon">🗑️</button>
+                                        </div>
+                                        <label class="field-label">Summarized customer issue accurately</label>
+                                        <div class="rating-preview">
+                                            <span>1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5 ⭐</span>
+                                        </div>
+                                        <div class="field-weight">Weight: 30%</div>
+                                    </div>
+                                    <button class="btn-secondary btn-sm">+ Add Field</button>
+                                </div>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <input type="text" class="section-title" value="Solution & Resolution">
+                                    <div class="section-actions">
+                                        <button class="btn-icon">↑</button>
+                                        <button class="btn-icon">↓</button>
+                                        <button class="btn-icon">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="section-weight">
+                                    <label>Weight: <input type="number" value="30" min="0" max="100">%</label>
+                                </div>
+                                <div class="form-fields">
+                                    <div class="form-field">
+                                        <div class="field-header">
+                                            <span class="field-type-badge">Rating Scale</span>
+                                            <button class="btn-icon">✏️</button>
+                                            <button class="btn-icon">🗑️</button>
+                                        </div>
+                                        <label class="field-label">Provided accurate information</label>
+                                        <div class="rating-preview">
+                                            <span>1 ⭐ 2 ⭐ 3 ⭐ 4 ⭐ 5 ⭐</span>
+                                        </div>
+                                        <div class="field-weight">Weight: 50%</div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="field-header">
+                                            <span class="field-type-badge">Text</span>
+                                            <button class="btn-icon">✏️</button>
+                                            <button class="btn-icon">🗑️</button>
+                                        </div>
+                                        <label class="field-label">Comments on solution quality</label>
+                                        <div class="field-weight">Weight: 50%</div>
+                                    </div>
+                                    <button class="btn-secondary btn-sm">+ Add Field</button>
+                                </div>
+                            </div>
+
+                            <button class="btn-primary btn-block">+ Add Section</button>
+                        </div>
+                    </div>
+
+                    <!-- Field Properties Panel -->
+                    <div class="properties-panel">
+                        <h3>Field Properties</h3>
+                        <div class="property-group">
+                            <label>Field Type</label>
+                            <select class="form-control">
+                                <option>Rating Scale (1-5)</option>
+                                <option>Yes/No</option>
+                                <option>Text Input</option>
+                                <option>Text Area</option>
+                                <option>Multiple Choice</option>
+                                <option>Checkbox</option>
+                            </select>
+                        </div>
+                        <div class="property-group">
+                            <label>Field Label</label>
+                            <input type="text" class="form-control" placeholder="Enter field label">
+                        </div>
+                        <div class="property-group">
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Optional description"></textarea>
+                        </div>
+                        <div class="property-group">
+                            <label>Weight (%)</label>
+                            <input type="number" class="form-control" min="0" max="100" value="0">
+                        </div>
+                        <div class="property-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox"> Required Field
+                            </label>
+                        </div>
+                        <div class="property-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox"> AI Auto-Score
+                            </label>
+                        </div>
+                        <div class="property-actions">
+                            <button class="btn-secondary btn-block">Cancel</button>
+                            <button class="btn-primary btn-block">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+{
+  "platform": {
+    "name": "Quality Automation - AI Analytics Platform",
+    "version": "1.0.0",
+    "description": "Agentic AI-based quality automation system"
+  },
+  "dashboards": {
+    "overview": {
+      "avgQualityScore": 87.5,
+      "callsAnalyzed": 12453,
+      "positiveSentiment": 76.3,
+      "trainingNeeds": 23
+    },
+    "scoreDistribution": {
+      "90-100": 45,
+      "80-89": 30,
+      "70-79": 15,
+      "60-69": 7,
+      "below60": 3
+    },
+    "topPerformers": [
+      {"name": "Sarah Johnson", "score": 96.5},
+      {"name": "Mike Chen", "score": 95.2},
+      {"name": "Emily Davis", "score": 94.8},
+      {"name": "James Wilson", "score": 93.7},
+      {"name": "Lisa Anderson", "score": 92.9}
+    ]
+  },
+  "sentiment": {
+    "overall": {
+      "positive": 76.3,
+      "neutral": 18.2,
+      "negative": 5.5
+    },
+    "emotions": {
+      "happy": 42,
+      "satisfied": 34,
+      "neutral": 18,
+      "frustrated": 4,
+      "angry": 2
+    }
+  },
+  "calls": [
+    {
+      "id": "12453",
+      "agent": "Sarah Johnson",
+      "customer": "John Smith",
+      "date": "2026-01-22 10:30",
+      "duration": "8m 32s",
+      "qualityScore": 96,
+      "sentiment": "Positive",
+      "status": "Reviewed"
+    },
+    {
+      "id": "12452",
+      "agent": "Mike Chen",
+      "customer": "Jane Doe",
+      "date": "2026-01-22 10:15",
+      "duration": "12m 18s",
+      "qualityScore": 94,
+      "sentiment": "Positive",
+      "status": "Reviewed"
+    }
+  ],
+  "trainingNeeds": [
+    {
+      "parameter": "Call Opening & Greeting",
+      "avgScore": 68,
+      "threshold": 85,
+      "gap": -17,
+      "affectedAgents": 23,
+      "priority": "High"
+    },
+    {
+      "parameter": "Product Knowledge",
+      "avgScore": 74,
+      "threshold": 90,
+      "gap": -16,
+      "affectedAgents": 18,
+      "priority": "High"
+    },
+    {
+      "parameter": "Objection Handling",
+      "avgScore": 79,
+      "threshold": 85,
+      "gap": -6,
+      "affectedAgents": 15,
+      "priority": "Medium"
+    }
+  ],
+  "actionPlans": [
+    {
+      "name": "Call Opening Excellence",
+      "parameter": "Call Opening & Greeting",
+      "enrolledAgents": 23,
+      "duration": "2 weeks",
+      "progress": 35,
+      "status": "In Progress"
+    },
+    {
+      "name": "Product Knowledge Enhancement",
+      "parameter": "Product Knowledge",
+      "enrolledAgents": 18,
+      "duration": "3 weeks",
+      "startDate": "2026-01-25",
+      "status": "Scheduled"
+    }
+  ],
+  "configuration": {
+    "sync": {
+      "enabled": true,
+      "frequency": "Daily",
+      "time": "02:00",
+      "lastSync": "2026-01-22 02:00"
+    },
+    "dataSources": [
+      {"name": "Call Recording System", "status": "Connected", "enabled": true},
+      {"name": "CRM Platform", "status": "Connected", "enabled": true},
+      {"name": "Workforce Management", "status": "Disconnected", "enabled": false}
+    ],
+    "ai": {
+      "autoTranscribe": true,
+      "sentimentAnalysis": true,
+      "emotionalAnalysis": true,
+      "autoScore": true,
+      "confidenceThreshold": 85
+    }
+  }
+}

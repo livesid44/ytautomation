@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration - QA Analytics</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>QA Analytics</h2>
+                <p>AI-Powered Platform</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="dashboards.html" class="nav-item">
+                    <span class="icon">📈</span>
+                    <span>Quality Dashboards</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item">
+                    <span class="icon">😊</span>
+                    <span>Sentiment Analysis</span>
+                </a>
+                <a href="form-designer.html" class="nav-item">
+                    <span class="icon">📝</span>
+                    <span>Form Designer</span>
+                </a>
+                <a href="call-audit.html" class="nav-item">
+                    <span class="icon">📞</span>
+                    <span>Call Audit</span>
+                </a>
+                <a href="tni-module.html" class="nav-item">
+                    <span class="icon">🎓</span>
+                    <span>TNI Module</span>
+                </a>
+                <a href="configuration.html" class="nav-item active">
+                    <span class="icon">⚙️</span>
+                    <span>Configuration</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <img src="images/logo-dark.png" alt="Logo" class="sys-logo">
+                </div>
+                <div class="header-right">
+                    <img src="images/Aura_logo.svg" alt="Aura Logo" class="micro-logo">
+                    <img src="images/techmlogo.svg" alt="Tech Logo" class="micro-logo">
+                    <div class="user-profile">
+                        <span>Admin User</span>
+                        <div class="avatar">AU</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-header">
+                <h1>System Configuration</h1>
+                <div class="page-header-actions">
+                    <button class="btn-secondary">Reset to Defaults</button>
+                    <button class="btn-primary">Save All Changes</button>
+                </div>
+            </div>
+
+            <div class="content">
+                <!-- Configuration Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="sync">Auto Sync</button>
+                    <button class="tab-btn" data-tab="integrations">Integrations</button>
+                    <button class="tab-btn" data-tab="ai">AI Settings</button>
+                    <button class="tab-btn" data-tab="notifications">Notifications</button>
+                    <button class="tab-btn" data-tab="users">User Management</button>
+                </div>
+
+                <!-- Auto Sync Tab -->
+                <div class="tab-content active" id="sync">
+                    <div class="config-section">
+                        <h2>Auto Sync Configuration</h2>
+                        <p class="section-description">Configure automatic data synchronization with external systems</p>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>Sync Schedule</h3>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="config-form">
+                                <div class="form-group">
+                                    <label>Sync Frequency</label>
+                                    <select class="form-control">
+                                        <option>Real-time (Immediate)</option>
+                                        <option>Every 15 minutes</option>
+                                        <option>Every 30 minutes</option>
+                                        <option>Hourly</option>
+                                        <option selected>Daily</option>
+                                        <option>Weekly</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Sync Time (for Daily/Weekly)</label>
+                                    <input type="time" class="form-control" value="02:00">
+                                    <small>Time is in your local timezone</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Sync Day (for Weekly)</label>
+                                    <select class="form-control">
+                                        <option>Monday</option>
+                                        <option>Tuesday</option>
+                                        <option>Wednesday</option>
+                                        <option>Thursday</option>
+                                        <option>Friday</option>
+                                        <option>Saturday</option>
+                                        <option selected>Sunday</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>Data Sources</h3>
+                            </div>
+                            <div class="data-sources-list">
+                                <div class="source-item">
+                                    <div class="source-info">
+                                        <h4>Call Recording System</h4>
+                                        <p>Sync call recordings and metadata</p>
+                                    </div>
+                                    <div class="source-status">
+                                        <span class="status-badge success">Connected</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="source-item">
+                                    <div class="source-info">
+                                        <h4>CRM Platform</h4>
+                                        <p>Import customer and agent data</p>
+                                    </div>
+                                    <div class="source-status">
+                                        <span class="status-badge success">Connected</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="source-item">
+                                    <div class="source-info">
+                                        <h4>Workforce Management</h4>
+                                        <p>Sync agent schedules and availability</p>
+                                    </div>
+                                    <div class="source-status">
+                                        <span class="status-badge warning">Disconnected</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>Sync History</h3>
+                            </div>
+                            <div class="table-card">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date/Time</th>
+                                            <th>Source</th>
+                                            <th>Records Synced</th>
+                                            <th>Duration</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2026-01-22 02:00</td>
+                                            <td>Call Recording System</td>
+                                            <td>324 calls</td>
+                                            <td>2m 15s</td>
+                                            <td><span class="status-badge success">Success</span></td>
+                                            <td><button class="btn-link">View Logs</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2026-01-22 02:02</td>
+                                            <td>CRM Platform</td>
+                                            <td>128 records</td>
+                                            <td>1m 32s</td>
+                                            <td><span class="status-badge success">Success</span></td>
+                                            <td><button class="btn-link">View Logs</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2026-01-21 02:00</td>
+                                            <td>Call Recording System</td>
+                                            <td>298 calls</td>
+                                            <td>2m 08s</td>
+                                            <td><span class="status-badge success">Success</span></td>
+                                            <td><button class="btn-link">View Logs</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>Manual Sync</h3>
+                            </div>
+                            <div class="manual-sync-panel">
+                                <p>Trigger an immediate sync from all connected sources</p>
+                                <button class="btn-primary">Run Sync Now</button>
+                                <p class="last-sync">Last sync: Today at 02:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Integrations Tab -->
+                <div class="tab-content" id="integrations">
+                    <div class="config-section">
+                        <h2>System Integrations</h2>
+                        <p class="section-description">Manage connections with third-party systems</p>
+
+                        <div class="integrations-grid">
+                            <div class="integration-card">
+                                <div class="integration-icon">☁️</div>
+                                <h3>Cloud Storage</h3>
+                                <p>Store call recordings and transcripts</p>
+                                <span class="status-badge success">Connected</span>
+                                <button class="btn-secondary btn-block">Configure</button>
+                            </div>
+                            <div class="integration-card">
+                                <div class="integration-icon">📧</div>
+                                <h3>Email Service</h3>
+                                <p>Send reports and notifications</p>
+                                <span class="status-badge success">Connected</span>
+                                <button class="btn-secondary btn-block">Configure</button>
+                            </div>
+                            <div class="integration-card">
+                                <div class="integration-icon">💬</div>
+                                <h3>Slack</h3>
+                                <p>Real-time alerts and notifications</p>
+                                <span class="status-badge warning">Not Connected</span>
+                                <button class="btn-primary btn-block">Connect</button>
+                            </div>
+                            <div class="integration-card">
+                                <div class="integration-icon">📊</div>
+                                <h3>Analytics Platform</h3>
+                                <p>Export data for advanced analytics</p>
+                                <span class="status-badge warning">Not Connected</span>
+                                <button class="btn-primary btn-block">Connect</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Settings Tab -->
+                <div class="tab-content" id="ai">
+                    <div class="config-section">
+                        <h2>AI & Automation Settings</h2>
+                        <p class="section-description">Configure artificial intelligence and automation features</p>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>AI Analysis</h3>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="config-form">
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Auto-transcribe all calls
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Automatic sentiment analysis
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Emotional analysis
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Quality score auto-calculation
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label>AI Confidence Threshold</label>
+                                    <input type="range" min="50" max="100" value="85" class="range-slider">
+                                    <span class="range-value">85%</span>
+                                    <small>Minimum confidence required for AI-generated scores</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>Auto-flagging Rules</h3>
+                            </div>
+                            <div class="config-form">
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Flag calls with quality score below 70%
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Flag calls with negative sentiment
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Flag calls with compliance violations
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                        Flag calls exceeding 15 minutes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Tab -->
+                <div class="tab-content" id="notifications">
+                    <div class="config-section">
+                        <h2>Notification Settings</h2>
+                        <p class="section-description">Manage email and in-app notifications</p>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>Email Notifications</h3>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="config-form">
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Daily quality summary
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Weekly performance report
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked>
+                                        Flagged call alerts
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox">
+                                        Training plan updates
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>Alert Recipients</h3>
+                            </div>
+                            <div class="recipients-list">
+                                <div class="recipient-item">
+                                    <div class="recipient-info">
+                                        <strong>admin@company.com</strong>
+                                        <span class="role-badge">Admin</span>
+                                    </div>
+                                    <button class="btn-link">Remove</button>
+                                </div>
+                                <div class="recipient-item">
+                                    <div class="recipient-info">
+                                        <strong>qa-team@company.com</strong>
+                                        <span class="role-badge">QA Team</span>
+                                    </div>
+                                    <button class="btn-link">Remove</button>
+                                </div>
+                                <div class="add-recipient">
+                                    <input type="email" class="form-control" placeholder="Enter email address">
+                                    <button class="btn-primary">Add Recipient</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Management Tab -->
+                <div class="tab-content" id="users">
+                    <div class="config-section">
+                        <h2>User Management</h2>
+                        <p class="section-description">Manage system users and permissions</p>
+
+                        <div class="table-card">
+                            <div class="table-header">
+                                <h3>Users</h3>
+                                <button class="btn-primary">+ Add User</button>
+                            </div>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Last Login</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Admin User</td>
+                                        <td>admin@company.com</td>
+                                        <td><span class="role-badge admin">Administrator</span></td>
+                                        <td><span class="status-badge success">Active</span></td>
+                                        <td>2026-01-22 10:30</td>
+                                        <td>
+                                            <button class="btn-link">Edit</button>
+                                            <button class="btn-link">Disable</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>QA Manager</td>
+                                        <td>qa-manager@company.com</td>
+                                        <td><span class="role-badge manager">Manager</span></td>
+                                        <td><span class="status-badge success">Active</span></td>
+                                        <td>2026-01-22 09:15</td>
+                                        <td>
+                                            <button class="btn-link">Edit</button>
+                                            <button class="btn-link">Disable</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>QA Analyst</td>
+                                        <td>qa-analyst@company.com</td>
+                                        <td><span class="role-badge analyst">Analyst</span></td>
+                                        <td><span class="status-badge success">Active</span></td>
+                                        <td>2026-01-22 08:45</td>
+                                        <td>
+                                            <button class="btn-link">Edit</button>
+                                            <button class="btn-link">Disable</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

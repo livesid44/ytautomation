@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment & Emotional Analysis - QA Analytics</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>QA Analytics</h2>
+                <p>AI-Powered Platform</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="dashboards.html" class="nav-item">
+                    <span class="icon">📈</span>
+                    <span>Quality Dashboards</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item active">
+                    <span class="icon">😊</span>
+                    <span>Sentiment Analysis</span>
+                </a>
+                <a href="form-designer.html" class="nav-item">
+                    <span class="icon">📝</span>
+                    <span>Form Designer</span>
+                </a>
+                <a href="call-audit.html" class="nav-item">
+                    <span class="icon">📞</span>
+                    <span>Call Audit</span>
+                </a>
+                <a href="tni-module.html" class="nav-item">
+                    <span class="icon">🎓</span>
+                    <span>TNI Module</span>
+                </a>
+                <a href="configuration.html" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Configuration</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <img src="images/logo-dark.png" alt="Logo" class="sys-logo">
+                </div>
+                <div class="header-right">
+                    <img src="images/Aura_logo.svg" alt="Aura Logo" class="micro-logo">
+                    <img src="images/techmlogo.svg" alt="Tech Logo" class="micro-logo">
+                    <div class="user-profile">
+                        <span>Admin User</span>
+                        <div class="avatar">AU</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-header">
+                <h1>Sentiment & Emotional Analysis</h1>
+                <div class="page-header-actions">
+                    <select class="filter-select">
+                        <option>All Agents</option>
+                        <option>Sarah Johnson</option>
+                        <option>Mike Chen</option>
+                        <option>Emily Davis</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                        <option>Last 90 days</option>
+                    </select>
+                    <button class="btn-primary">Generate Report</button>
+                </div>
+            </div>
+
+            <div class="content">
+                <!-- Sentiment Overview -->
+                <div class="metrics-grid">
+                    <div class="metric-card sentiment-positive">
+                        <div class="metric-icon">😊</div>
+                        <div class="metric-info">
+                            <h3>Positive Sentiment</h3>
+                            <div class="metric-value">76.3%</div>
+                            <div class="metric-detail">9,512 calls</div>
+                        </div>
+                    </div>
+                    <div class="metric-card sentiment-neutral">
+                        <div class="metric-icon">😐</div>
+                        <div class="metric-info">
+                            <h3>Neutral Sentiment</h3>
+                            <div class="metric-value">18.2%</div>
+                            <div class="metric-detail">2,267 calls</div>
+                        </div>
+                    </div>
+                    <div class="metric-card sentiment-negative">
+                        <div class="metric-icon">😞</div>
+                        <div class="metric-info">
+                            <h3>Negative Sentiment</h3>
+                            <div class="metric-value">5.5%</div>
+                            <div class="metric-detail">674 calls</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-info">
+                            <h3>Avg Confidence</h3>
+                            <div class="metric-value">94.2%</div>
+                            <div class="metric-detail">AI Analysis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emotional Analysis -->
+                <div class="section">
+                    <h2>Emotional Analysis Breakdown</h2>
+                    <div class="emotion-grid">
+                        <div class="emotion-card">
+                            <div class="emotion-icon">😊</div>
+                            <h4>Happy</h4>
+                            <div class="emotion-bar">
+                                <div class="emotion-fill" style="width: 42%"></div>
+                            </div>
+                            <span class="emotion-percent">42%</span>
+                        </div>
+                        <div class="emotion-card">
+                            <div class="emotion-icon">😌</div>
+                            <h4>Satisfied</h4>
+                            <div class="emotion-bar">
+                                <div class="emotion-fill" style="width: 34%"></div>
+                            </div>
+                            <span class="emotion-percent">34%</span>
+                        </div>
+                        <div class="emotion-card">
+                            <div class="emotion-icon">😐</div>
+                            <h4>Neutral</h4>
+                            <div class="emotion-bar">
+                                <div class="emotion-fill" style="width: 18%"></div>
+                            </div>
+                            <span class="emotion-percent">18%</span>
+                        </div>
+                        <div class="emotion-card">
+                            <div class="emotion-icon">😟</div>
+                            <h4>Frustrated</h4>
+                            <div class="emotion-bar">
+                                <div class="emotion-fill" style="width: 4%"></div>
+                            </div>
+                            <span class="emotion-percent">4%</span>
+                        </div>
+                        <div class="emotion-card">
+                            <div class="emotion-icon">😠</div>
+                            <h4>Angry</h4>
+                            <div class="emotion-bar">
+                                <div class="emotion-fill" style="width: 2%"></div>
+                            </div>
+                            <span class="emotion-percent">2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sentiment Trends -->
+                <div class="chart-card full-width">
+                    <h3>Sentiment Trends Over Time</h3>
+                    <div class="chart-placeholder">
+                        <div class="sentiment-chart">
+                            <div class="chart-legend">
+                                <span class="legend-item"><span class="dot green"></span> Positive</span>
+                                <span class="legend-item"><span class="dot gray"></span> Neutral</span>
+                                <span class="legend-item"><span class="dot red"></span> Negative</span>
+                            </div>
+                            <div class="chart-info">Multi-line chart showing sentiment trends would be rendered here</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call Details with Sentiment -->
+                <div class="section">
+                    <h2>Recent Calls with Sentiment Analysis</h2>
+                    <div class="table-card">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Call ID</th>
+                                    <th>Agent</th>
+                                    <th>Date/Time</th>
+                                    <th>Duration</th>
+                                    <th>Overall Sentiment</th>
+                                    <th>Emotions Detected</th>
+                                    <th>Quality Score</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#12453</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>2026-01-22 10:30</td>
+                                    <td>8m 32s</td>
+                                    <td><span class="sentiment-badge positive">Positive (92%)</span></td>
+                                    <td>
+                                        <span class="emotion-tag">😊 Happy</span>
+                                        <span class="emotion-tag">😌 Satisfied</span>
+                                    </td>
+                                    <td><span class="score-badge high">96%</span></td>
+                                    <td><button class="btn-link">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#12452</td>
+                                    <td>Mike Chen</td>
+                                    <td>2026-01-22 10:15</td>
+                                    <td>12m 18s</td>
+                                    <td><span class="sentiment-badge positive">Positive (88%)</span></td>
+                                    <td>
+                                        <span class="emotion-tag">😊 Happy</span>
+                                    </td>
+                                    <td><span class="score-badge high">94%</span></td>
+                                    <td><button class="btn-link">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#12451</td>
+                                    <td>Emily Davis</td>
+                                    <td>2026-01-22 09:45</td>
+                                    <td>6m 54s</td>
+                                    <td><span class="sentiment-badge neutral">Neutral (75%)</span></td>
+                                    <td>
+                                        <span class="emotion-tag">😐 Neutral</span>
+                                    </td>
+                                    <td><span class="score-badge medium">82%</span></td>
+                                    <td><button class="btn-link">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#12450</td>
+                                    <td>James Wilson</td>
+                                    <td>2026-01-22 09:30</td>
+                                    <td>15m 42s</td>
+                                    <td><span class="sentiment-badge negative">Negative (68%)</span></td>
+                                    <td>
+                                        <span class="emotion-tag">😟 Frustrated</span>
+                                        <span class="emotion-tag">😐 Neutral</span>
+                                    </td>
+                                    <td><span class="score-badge medium">78%</span></td>
+                                    <td><button class="btn-link">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#12449</td>
+                                    <td>Lisa Anderson</td>
+                                    <td>2026-01-22 09:00</td>
+                                    <td>9m 23s</td>
+                                    <td><span class="sentiment-badge positive">Positive (95%)</span></td>
+                                    <td>
+                                        <span class="emotion-tag">😊 Happy</span>
+                                        <span class="emotion-tag">😌 Satisfied</span>
+                                    </td>
+                                    <td><span class="score-badge high">98%</span></td>
+                                    <td><button class="btn-link">View Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Insights and Recommendations -->
+                <div class="section">
+                    <h2>AI-Generated Insights</h2>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <span class="insight-icon">💡</span>
+                                <h4>Positive Pattern Detected</h4>
+                            </div>
+                            <p>Agents who use empathetic phrases early in calls show 23% higher positive sentiment scores.</p>
+                            <button class="btn-secondary btn-sm">View Analysis</button>
+                        </div>
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <span class="insight-icon">⚠️</span>
+                                <h4>Alert: Sentiment Drop</h4>
+                            </div>
+                            <p>Technical support calls show a 12% increase in negative sentiment compared to last month.</p>
+                            <button class="btn-secondary btn-sm">Investigate</button>
+                        </div>
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <span class="insight-icon">🎯</span>
+                                <h4>Recommendation</h4>
+                            </div>
+                            <p>Consider training on de-escalation techniques for calls with initial negative sentiment.</p>
+                            <button class="btn-secondary btn-sm">Create Training</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
