@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Audit - QA Analytics</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>QA Analytics</h2>
+                <p>AI-Powered Platform</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="dashboards.html" class="nav-item">
+                    <span class="icon">📈</span>
+                    <span>Quality Dashboards</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item">
+                    <span class="icon">😊</span>
+                    <span>Sentiment Analysis</span>
+                </a>
+                <a href="form-designer.html" class="nav-item">
+                    <span class="icon">📝</span>
+                    <span>Form Designer</span>
+                </a>
+                <a href="call-audit.html" class="nav-item active">
+                    <span class="icon">📞</span>
+                    <span>Call Audit</span>
+                </a>
+                <a href="tni-module.html" class="nav-item">
+                    <span class="icon">🎓</span>
+                    <span>TNI Module</span>
+                </a>
+                <a href="configuration.html" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Configuration</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Call Level Audit</h1>
+                <div class="header-actions">
+                    <input type="text" class="search-input" placeholder="Search by Call ID, Agent, or Customer...">
+                    <select class="filter-select">
+                        <option>All Status</option>
+                        <option>Pending Review</option>
+                        <option>Reviewed</option>
+                        <option>Flagged</option>
+                    </select>
+                    <button class="btn-primary">Export List</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Filters Section -->
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <label>Date Range:</label>
+                        <input type="date" class="filter-input">
+                        <span>to</span>
+                        <input type="date" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label>Agent:</label>
+                        <select class="filter-select">
+                            <option>All Agents</option>
+                            <option>Sarah Johnson</option>
+                            <option>Mike Chen</option>
+                            <option>Emily Davis</option>
+                            <option>James Wilson</option>
+                            <option>Lisa Anderson</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Quality Score:</label>
+                        <select class="filter-select">
+                            <option>All Scores</option>
+                            <option>90-100%</option>
+                            <option>80-89%</option>
+                            <option>70-79%</option>
+                            <option>Below 70%</option>
+                        </select>
+                    </div>
+                    <button class="btn-secondary">Apply Filters</button>
+                    <button class="btn-link">Clear All</button>
+                </div>
+
+                <!-- Call List Table -->
+                <div class="table-card">
+                    <div class="table-header">
+                        <h3>Call Audit List (12,453 calls)</h3>
+                        <div class="bulk-actions">
+                            <input type="checkbox" id="selectAll">
+                            <label for="selectAll">Select All</label>
+                            <button class="btn-secondary btn-sm">Bulk Review</button>
+                        </div>
+                    </div>
+                    <table class="data-table calls-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>Call ID</th>
+                                <th>Date/Time</th>
+                                <th>Agent</th>
+                                <th>Customer</th>
+                                <th>Duration</th>
+                                <th>Quality Score</th>
+                                <th>Sentiment</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="call-row" data-call-id="12453">
+                                <td><input type="checkbox"></td>
+                                <td><strong>#12453</strong></td>
+                                <td>2026-01-22 10:30</td>
+                                <td>Sarah Johnson</td>
+                                <td>John Smith</td>
+                                <td>8m 32s</td>
+                                <td><span class="score-badge high">96%</span></td>
+                                <td><span class="sentiment-badge positive">Positive</span></td>
+                                <td><span class="status-badge success">Reviewed</span></td>
+                                <td>
+                                    <button class="btn-link view-transcript" data-call="12453">View Transcript</button>
+                                    <button class="btn-link">Details</button>
+                                </td>
+                            </tr>
+                            <tr class="call-row" data-call-id="12452">
+                                <td><input type="checkbox"></td>
+                                <td><strong>#12452</strong></td>
+                                <td>2026-01-22 10:15</td>
+                                <td>Mike Chen</td>
+                                <td>Jane Doe</td>
+                                <td>12m 18s</td>
+                                <td><span class="score-badge high">94%</span></td>
+                                <td><span class="sentiment-badge positive">Positive</span></td>
+                                <td><span class="status-badge success">Reviewed</span></td>
+                                <td>
+                                    <button class="btn-link view-transcript" data-call="12452">View Transcript</button>
+                                    <button class="btn-link">Details</button>
+                                </td>
+                            </tr>
+                            <tr class="call-row" data-call-id="12451">
+                                <td><input type="checkbox"></td>
+                                <td><strong>#12451</strong></td>
+                                <td>2026-01-22 09:45</td>
+                                <td>Emily Davis</td>
+                                <td>Robert Brown</td>
+                                <td>6m 54s</td>
+                                <td><span class="score-badge medium">82%</span></td>
+                                <td><span class="sentiment-badge neutral">Neutral</span></td>
+                                <td><span class="status-badge warning">Pending</span></td>
+                                <td>
+                                    <button class="btn-link view-transcript" data-call="12451">View Transcript</button>
+                                    <button class="btn-link">Details</button>
+                                </td>
+                            </tr>
+                            <tr class="call-row flagged" data-call-id="12450">
+                                <td><input type="checkbox"></td>
+                                <td><strong>#12450</strong></td>
+                                <td>2026-01-22 09:30</td>
+                                <td>James Wilson</td>
+                                <td>Mary Johnson</td>
+                                <td>15m 42s</td>
+                                <td><span class="score-badge medium">78%</span></td>
+                                <td><span class="sentiment-badge negative">Negative</span></td>
+                                <td><span class="status-badge danger">Flagged</span></td>
+                                <td>
+                                    <button class="btn-link view-transcript" data-call="12450">View Transcript</button>
+                                    <button class="btn-link">Details</button>
+                                </td>
+                            </tr>
+                            <tr class="call-row" data-call-id="12449">
+                                <td><input type="checkbox"></td>
+                                <td><strong>#12449</strong></td>
+                                <td>2026-01-22 09:00</td>
+                                <td>Lisa Anderson</td>
+                                <td>David Wilson</td>
+                                <td>9m 23s</td>
+                                <td><span class="score-badge high">98%</span></td>
+                                <td><span class="sentiment-badge positive">Positive</span></td>
+                                <td><span class="status-badge success">Reviewed</span></td>
+                                <td>
+                                    <button class="btn-link view-transcript" data-call="12449">View Transcript</button>
+                                    <button class="btn-link">Details</button>
+                                </td>
+                            </tr>
+                            <tr class="call-row" data-call-id="12448">
+                                <td><input type="checkbox"></td>
+                                <td><strong>#12448</strong></td>
+                                <td>2026-01-22 08:45</td>
+                                <td>Sarah Johnson</td>
+                                <td>Emma Taylor</td>
+                                <td>7m 15s</td>
+                                <td><span class="score-badge high">91%</span></td>
+                                <td><span class="sentiment-badge positive">Positive</span></td>
+                                <td><span class="status-badge success">Reviewed</span></td>
+                                <td>
+                                    <button class="btn-link view-transcript" data-call="12448">View Transcript</button>
+                                    <button class="btn-link">Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-pagination">
+                        <button class="btn-secondary">Previous</button>
+                        <span class="pagination-info">Page 1 of 208</span>
+                        <button class="btn-secondary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Transcript Viewer Modal -->
+    <div class="modal" id="transcriptModal">
+        <div class="modal-content transcript-modal">
+            <div class="modal-header">
+                <h2>Call Transcript - <span id="modalCallId">#12453</span></h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="transcript-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Agent:</strong> <span id="modalAgent">Sarah Johnson</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Customer:</strong> <span id="modalCustomer">John Smith</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Date/Time:</strong> <span id="modalDateTime">2026-01-22 10:30</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Duration:</strong> <span id="modalDuration">8m 32s</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Quality Score:</strong> <span id="modalScore" class="score-badge high">96%</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Sentiment:</strong> <span id="modalSentiment" class="sentiment-badge positive">Positive</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="transcript-content">
+                    <div class="transcript-line agent">
+                        <div class="speaker">
+                            <span class="speaker-badge agent">Agent</span>
+                            <span class="timestamp">00:00</span>
+                        </div>
+                        <div class="message">
+                            Good morning, thank you for calling Customer Support. My name is Sarah, how may I help you today?
+                        </div>
+                        <div class="ai-analysis">
+                            <span class="analysis-tag positive">✓ Professional greeting</span>
+                            <span class="analysis-tag positive">✓ Clear introduction</span>
+                        </div>
+                    </div>
+
+                    <div class="transcript-line customer">
+                        <div class="speaker">
+                            <span class="speaker-badge customer">Customer</span>
+                            <span class="timestamp">00:08</span>
+                        </div>
+                        <div class="message">
+                            Hi Sarah, I'm having trouble with my recent order. It hasn't arrived yet and it's been a week.
+                        </div>
+                        <div class="sentiment-indicator">
+                            <span class="emotion-tag">😐 Neutral</span>
+                        </div>
+                    </div>
+
+                    <div class="transcript-line agent">
+                        <div class="speaker">
+                            <span class="speaker-badge agent">Agent</span>
+                            <span class="timestamp">00:18</span>
+                        </div>
+                        <div class="message">
+                            I completely understand your concern, and I apologize for the delay. Let me look into that for you right away. May I have your order number, please?
+                        </div>
+                        <div class="ai-analysis">
+                            <span class="analysis-tag positive">✓ Empathy shown</span>
+                            <span class="analysis-tag positive">✓ Proactive assistance</span>
+                        </div>
+                    </div>
+
+                    <div class="transcript-line customer">
+                        <div class="speaker">
+                            <span class="speaker-badge customer">Customer</span>
+                            <span class="timestamp">00:30</span>
+                        </div>
+                        <div class="message">
+                            Yes, it's ORD-123456.
+                        </div>
+                    </div>
+
+                    <div class="transcript-line agent">
+                        <div class="speaker">
+                            <span class="speaker-badge agent">Agent</span>
+                            <span class="timestamp">00:35</span>
+                        </div>
+                        <div class="message">
+                            Thank you. Let me pull up your order... I can see your order was shipped on the 15th and is currently in transit. According to the tracking information, it should arrive by tomorrow. I'll send you the tracking link via email right now so you can monitor it yourself.
+                        </div>
+                        <div class="ai-analysis">
+                            <span class="analysis-tag positive">✓ Clear information provided</span>
+                            <span class="analysis-tag positive">✓ Proactive follow-up</span>
+                        </div>
+                    </div>
+
+                    <div class="transcript-line customer">
+                        <div class="speaker">
+                            <span class="speaker-badge customer">Customer</span>
+                            <span class="timestamp">00:55</span>
+                        </div>
+                        <div class="message">
+                            Oh wonderful! That's great to hear. Thank you so much for checking that for me.
+                        </div>
+                        <div class="sentiment-indicator">
+                            <span class="emotion-tag">😊 Happy</span>
+                        </div>
+                    </div>
+
+                    <div class="transcript-line agent">
+                        <div class="speaker">
+                            <span class="speaker-badge agent">Agent</span>
+                            <span class="timestamp">01:02</span>
+                        </div>
+                        <div class="message">
+                            You're very welcome! Is there anything else I can help you with today?
+                        </div>
+                        <div class="ai-analysis">
+                            <span class="analysis-tag positive">✓ Offered additional help</span>
+                        </div>
+                    </div>
+
+                    <div class="transcript-line customer">
+                        <div class="speaker">
+                            <span class="speaker-badge customer">Customer</span>
+                            <span class="timestamp">01:08</span>
+                        </div>
+                        <div class="message">
+                            No, that's all. Thank you!
+                        </div>
+                    </div>
+
+                    <div class="transcript-line agent">
+                        <div class="speaker">
+                            <span class="speaker-badge agent">Agent</span>
+                            <span class="timestamp">01:12</span>
+                        </div>
+                        <div class="message">
+                            Perfect! Thank you for calling, and have a great day!
+                        </div>
+                        <div class="ai-analysis">
+                            <span class="analysis-tag positive">✓ Professional closing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transcript-summary">
+                    <h4>AI Analysis Summary</h4>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <strong>Strengths:</strong>
+                            <ul>
+                                <li>Excellent empathy and professional tone throughout</li>
+                                <li>Quick problem resolution</li>
+                                <li>Proactive in providing tracking information</li>
+                            </ul>
+                        </div>
+                        <div class="summary-item">
+                            <strong>Areas for Improvement:</strong>
+                            <ul>
+                                <li>Could have offered compensation for the delay</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary">Download Transcript</button>
+                <button class="btn-secondary">Print</button>
+                <button class="btn-primary">Mark as Reviewed</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

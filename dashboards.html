@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Dashboards - QA Analytics</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>QA Analytics</h2>
+                <p>AI-Powered Platform</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="dashboards.html" class="nav-item active">
+                    <span class="icon">📈</span>
+                    <span>Quality Dashboards</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item">
+                    <span class="icon">😊</span>
+                    <span>Sentiment Analysis</span>
+                </a>
+                <a href="form-designer.html" class="nav-item">
+                    <span class="icon">📝</span>
+                    <span>Form Designer</span>
+                </a>
+                <a href="call-audit.html" class="nav-item">
+                    <span class="icon">📞</span>
+                    <span>Call Audit</span>
+                </a>
+                <a href="tni-module.html" class="nav-item">
+                    <span class="icon">🎓</span>
+                    <span>TNI Module</span>
+                </a>
+                <a href="configuration.html" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Configuration</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Quality Score Dashboards</h1>
+                <div class="header-actions">
+                    <select class="filter-select">
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                        <option>Last 90 days</option>
+                        <option>Custom Range</option>
+                    </select>
+                    <button class="btn-primary">Export Data</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Dashboard Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="trends">Trends</button>
+                    <button class="tab-btn" data-tab="agents">Agent Performance</button>
+                    <button class="tab-btn" data-tab="categories">Category Analysis</button>
+                </div>
+
+                <!-- Overview Tab -->
+                <div class="tab-content active" id="overview">
+                    <div class="dashboard-grid">
+                        <!-- Quality Score Distribution -->
+                        <div class="chart-card full-width">
+                            <h3>Quality Score Distribution</h3>
+                            <div class="chart-placeholder">
+                                <canvas id="scoreDistribution"></canvas>
+                                <div class="chart-info">
+                                    <div class="score-range">
+                                        <span class="range-label">90-100%</span>
+                                        <div class="range-bar" style="width: 45%">45%</div>
+                                    </div>
+                                    <div class="score-range">
+                                        <span class="range-label">80-89%</span>
+                                        <div class="range-bar" style="width: 30%">30%</div>
+                                    </div>
+                                    <div class="score-range">
+                                        <span class="range-label">70-79%</span>
+                                        <div class="range-bar" style="width: 15%">15%</div>
+                                    </div>
+                                    <div class="score-range">
+                                        <span class="range-label">60-69%</span>
+                                        <div class="range-bar" style="width: 7%">7%</div>
+                                    </div>
+                                    <div class="score-range">
+                                        <span class="range-label">Below 60%</span>
+                                        <div class="range-bar" style="width: 3%">3%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Top Performers -->
+                        <div class="chart-card">
+                            <h3>Top Performers</h3>
+                            <div class="leaderboard">
+                                <div class="leader-item">
+                                    <span class="rank gold">1</span>
+                                    <span class="agent-name">Sarah Johnson</span>
+                                    <span class="score">96.5%</span>
+                                </div>
+                                <div class="leader-item">
+                                    <span class="rank silver">2</span>
+                                    <span class="agent-name">Mike Chen</span>
+                                    <span class="score">95.2%</span>
+                                </div>
+                                <div class="leader-item">
+                                    <span class="rank bronze">3</span>
+                                    <span class="agent-name">Emily Davis</span>
+                                    <span class="score">94.8%</span>
+                                </div>
+                                <div class="leader-item">
+                                    <span class="rank">4</span>
+                                    <span class="agent-name">James Wilson</span>
+                                    <span class="score">93.7%</span>
+                                </div>
+                                <div class="leader-item">
+                                    <span class="rank">5</span>
+                                    <span class="agent-name">Lisa Anderson</span>
+                                    <span class="score">92.9%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Areas Needing Improvement -->
+                        <div class="chart-card">
+                            <h3>Areas Needing Improvement</h3>
+                            <div class="improvement-list">
+                                <div class="improvement-item">
+                                    <div class="improvement-header">
+                                        <span class="category">Call Opening</span>
+                                        <span class="score-badge low">68%</span>
+                                    </div>
+                                    <div class="improvement-bar">
+                                        <div class="progress" style="width: 68%"></div>
+                                    </div>
+                                </div>
+                                <div class="improvement-item">
+                                    <div class="improvement-header">
+                                        <span class="category">Product Knowledge</span>
+                                        <span class="score-badge medium">74%</span>
+                                    </div>
+                                    <div class="improvement-bar">
+                                        <div class="progress" style="width: 74%"></div>
+                                    </div>
+                                </div>
+                                <div class="improvement-item">
+                                    <div class="improvement-header">
+                                        <span class="category">Objection Handling</span>
+                                        <span class="score-badge medium">79%</span>
+                                    </div>
+                                    <div class="improvement-bar">
+                                        <div class="progress" style="width: 79%"></div>
+                                    </div>
+                                </div>
+                                <div class="improvement-item">
+                                    <div class="improvement-header">
+                                        <span class="category">Empathy & Tone</span>
+                                        <span class="score-badge high">86%</span>
+                                    </div>
+                                    <div class="improvement-bar">
+                                        <div class="progress" style="width: 86%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trends Tab -->
+                <div class="tab-content" id="trends">
+                    <div class="chart-card full-width">
+                        <h3>Quality Score Trends (Last 90 Days)</h3>
+                        <div class="chart-placeholder">
+                            <div class="trend-chart">
+                                <div class="chart-legend">
+                                    <span class="legend-item"><span class="dot blue"></span> Overall Score</span>
+                                    <span class="legend-item"><span class="dot green"></span> Target</span>
+                                </div>
+                                <div class="chart-info">Line chart showing quality trends over time would be rendered here</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agents Tab -->
+                <div class="tab-content" id="agents">
+                    <div class="table-card">
+                        <h3>Agent Performance Details</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Agent Name</th>
+                                    <th>Calls Handled</th>
+                                    <th>Avg Quality Score</th>
+                                    <th>Compliance</th>
+                                    <th>Customer Satisfaction</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sarah Johnson</td>
+                                    <td>324</td>
+                                    <td><span class="score-badge high">96.5%</span></td>
+                                    <td>100%</td>
+                                    <td>4.8/5.0</td>
+                                    <td><span class="status-badge success">Excellent</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Mike Chen</td>
+                                    <td>298</td>
+                                    <td><span class="score-badge high">95.2%</span></td>
+                                    <td>98%</td>
+                                    <td>4.7/5.0</td>
+                                    <td><span class="status-badge success">Excellent</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Emily Davis</td>
+                                    <td>312</td>
+                                    <td><span class="score-badge high">94.8%</span></td>
+                                    <td>97%</td>
+                                    <td>4.6/5.0</td>
+                                    <td><span class="status-badge success">Excellent</span></td>
+                                </tr>
+                                <tr>
+                                    <td>James Wilson</td>
+                                    <td>276</td>
+                                    <td><span class="score-badge high">93.7%</span></td>
+                                    <td>95%</td>
+                                    <td>4.5/5.0</td>
+                                    <td><span class="status-badge success">Good</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Lisa Anderson</td>
+                                    <td>289</td>
+                                    <td><span class="score-badge high">92.9%</span></td>
+                                    <td>94%</td>
+                                    <td>4.4/5.0</td>
+                                    <td><span class="status-badge success">Good</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Categories Tab -->
+                <div class="tab-content" id="categories">
+                    <div class="dashboard-grid">
+                        <div class="chart-card">
+                            <h3>Communication Skills</h3>
+                            <div class="category-score">
+                                <div class="score-circle">88%</div>
+                                <ul class="subcategories">
+                                    <li>Active Listening: 92%</li>
+                                    <li>Clear Communication: 87%</li>
+                                    <li>Professional Tone: 85%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Problem Resolution</h3>
+                            <div class="category-score">
+                                <div class="score-circle">85%</div>
+                                <ul class="subcategories">
+                                    <li>First Call Resolution: 82%</li>
+                                    <li>Solution Quality: 88%</li>
+                                    <li>Follow-up: 85%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Compliance</h3>
+                            <div class="category-score">
+                                <div class="score-circle">94%</div>
+                                <ul class="subcategories">
+                                    <li>Script Adherence: 95%</li>
+                                    <li>Data Privacy: 98%</li>
+                                    <li>Documentation: 89%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Customer Experience</h3>
+                            <div class="category-score">
+                                <div class="score-circle">87%</div>
+                                <ul class="subcategories">
+                                    <li>Empathy: 90%</li>
+                                    <li>Professionalism: 88%</li>
+                                    <li>Rapport Building: 83%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

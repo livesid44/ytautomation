@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNI Module - QA Analytics</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>QA Analytics</h2>
+                <p>AI-Powered Platform</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="dashboards.html" class="nav-item">
+                    <span class="icon">📈</span>
+                    <span>Quality Dashboards</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item">
+                    <span class="icon">😊</span>
+                    <span>Sentiment Analysis</span>
+                </a>
+                <a href="form-designer.html" class="nav-item">
+                    <span class="icon">📝</span>
+                    <span>Form Designer</span>
+                </a>
+                <a href="call-audit.html" class="nav-item">
+                    <span class="icon">📞</span>
+                    <span>Call Audit</span>
+                </a>
+                <a href="tni-module.html" class="nav-item active">
+                    <span class="icon">🎓</span>
+                    <span>TNI Module</span>
+                </a>
+                <a href="configuration.html" class="nav-item">
+                    <span class="icon">⚙️</span>
+                    <span>Configuration</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Training Needs Identification (TNI)</h1>
+                <div class="header-actions">
+                    <select class="filter-select">
+                        <option>All Agents</option>
+                        <option>Critical Issues Only</option>
+                        <option>By Department</option>
+                    </select>
+                    <button class="btn-primary">Create Training Plan</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- TNI Summary -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-info">
+                            <h3>Active Training Needs</h3>
+                            <div class="metric-value">23</div>
+                            <div class="metric-detail">Across all parameters</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">👥</div>
+                        <div class="metric-info">
+                            <h3>Agents Requiring Training</h3>
+                            <div class="metric-value">47</div>
+                            <div class="metric-detail">Out of 120 total</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📚</div>
+                        <div class="metric-info">
+                            <h3>Ongoing Training Plans</h3>
+                            <div class="metric-value">8</div>
+                            <div class="metric-detail">In progress</div>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">✅</div>
+                        <div class="metric-info">
+                            <h3>Completed This Month</h3>
+                            <div class="metric-value">12</div>
+                            <div class="metric-detail">Training sessions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parameters Not Processed Well -->
+                <div class="section">
+                    <h2>Parameters Requiring Attention</h2>
+                    <div class="table-card">
+                        <table class="data-table tni-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Avg Score</th>
+                                    <th>Threshold</th>
+                                    <th>Gap</th>
+                                    <th>Affected Agents</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="priority-high">
+                                    <td><strong>Call Opening & Greeting</strong></td>
+                                    <td><span class="score-badge low">68%</span></td>
+                                    <td>85%</td>
+                                    <td class="gap-high">-17%</td>
+                                    <td>23 agents</td>
+                                    <td><span class="priority-badge high">High</span></td>
+                                    <td><span class="status-badge warning">Action Required</span></td>
+                                    <td>
+                                        <button class="btn-link view-details" data-param="greeting">View Details</button>
+                                        <button class="btn-link create-plan" data-param="greeting">Create Plan</button>
+                                    </td>
+                                </tr>
+                                <tr class="priority-high">
+                                    <td><strong>Product Knowledge</strong></td>
+                                    <td><span class="score-badge medium">74%</span></td>
+                                    <td>90%</td>
+                                    <td class="gap-high">-16%</td>
+                                    <td>18 agents</td>
+                                    <td><span class="priority-badge high">High</span></td>
+                                    <td><span class="status-badge warning">Action Required</span></td>
+                                    <td>
+                                        <button class="btn-link view-details" data-param="product">View Details</button>
+                                        <button class="btn-link create-plan" data-param="product">Create Plan</button>
+                                    </td>
+                                </tr>
+                                <tr class="priority-medium">
+                                    <td><strong>Objection Handling</strong></td>
+                                    <td><span class="score-badge medium">79%</span></td>
+                                    <td>85%</td>
+                                    <td class="gap-medium">-6%</td>
+                                    <td>15 agents</td>
+                                    <td><span class="priority-badge medium">Medium</span></td>
+                                    <td><span class="status-badge info">In Progress</span></td>
+                                    <td>
+                                        <button class="btn-link view-details" data-param="objection">View Details</button>
+                                        <button class="btn-link create-plan" data-param="objection">Create Plan</button>
+                                    </td>
+                                </tr>
+                                <tr class="priority-medium">
+                                    <td><strong>Documentation & Follow-up</strong></td>
+                                    <td><span class="score-badge medium">81%</span></td>
+                                    <td>90%</td>
+                                    <td class="gap-medium">-9%</td>
+                                    <td>12 agents</td>
+                                    <td><span class="priority-badge medium">Medium</span></td>
+                                    <td><span class="status-badge warning">Action Required</span></td>
+                                    <td>
+                                        <button class="btn-link view-details" data-param="documentation">View Details</button>
+                                        <button class="btn-link create-plan" data-param="documentation">Create Plan</button>
+                                    </td>
+                                </tr>
+                                <tr class="priority-low">
+                                    <td><strong>Call Closing</strong></td>
+                                    <td><span class="score-badge high">83%</span></td>
+                                    <td>85%</td>
+                                    <td class="gap-low">-2%</td>
+                                    <td>8 agents</td>
+                                    <td><span class="priority-badge low">Low</span></td>
+                                    <td><span class="status-badge success">Monitored</span></td>
+                                    <td>
+                                        <button class="btn-link view-details" data-param="closing">View Details</button>
+                                        <button class="btn-link create-plan" data-param="closing">Create Plan</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Action Plans -->
+                <div class="section">
+                    <h2>Active Training Action Plans</h2>
+                    <div class="action-plans-grid">
+                        <div class="action-plan-card">
+                            <div class="plan-header">
+                                <h3>Call Opening Excellence</h3>
+                                <span class="status-badge warning">In Progress</span>
+                            </div>
+                            <div class="plan-details">
+                                <div class="plan-info">
+                                    <strong>Target Parameter:</strong> Call Opening & Greeting
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Enrolled Agents:</strong> 23 agents
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Duration:</strong> 2 weeks
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Progress:</strong>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 35%"></div>
+                                    </div>
+                                    <span class="progress-text">35% Complete</span>
+                                </div>
+                            </div>
+                            <div class="plan-activities">
+                                <h4>Activities:</h4>
+                                <ul>
+                                    <li>✅ Online Module: Professional Greetings (Completed)</li>
+                                    <li>🔄 Role-play Sessions (In Progress)</li>
+                                    <li>⏳ Practice Calls Review (Upcoming)</li>
+                                    <li>⏳ Assessment Test (Upcoming)</li>
+                                </ul>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn-secondary btn-sm">View Details</button>
+                                <button class="btn-secondary btn-sm">Edit Plan</button>
+                                <button class="btn-primary btn-sm">Update Progress</button>
+                            </div>
+                        </div>
+
+                        <div class="action-plan-card">
+                            <div class="plan-header">
+                                <h3>Product Knowledge Enhancement</h3>
+                                <span class="status-badge info">Scheduled</span>
+                            </div>
+                            <div class="plan-details">
+                                <div class="plan-info">
+                                    <strong>Target Parameter:</strong> Product Knowledge
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Enrolled Agents:</strong> 18 agents
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Duration:</strong> 3 weeks
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Start Date:</strong> 2026-01-25
+                                </div>
+                            </div>
+                            <div class="plan-activities">
+                                <h4>Planned Activities:</h4>
+                                <ul>
+                                    <li>⏳ Product Training Workshop (Week 1)</li>
+                                    <li>⏳ Knowledge Base Study (Week 2)</li>
+                                    <li>⏳ Certification Exam (Week 3)</li>
+                                    <li>⏳ Shadowing Expert Calls (Week 3)</li>
+                                </ul>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn-secondary btn-sm">View Details</button>
+                                <button class="btn-secondary btn-sm">Edit Plan</button>
+                                <button class="btn-primary btn-sm">Start Plan</button>
+                            </div>
+                        </div>
+
+                        <div class="action-plan-card">
+                            <div class="plan-header">
+                                <h3>Objection Handling Mastery</h3>
+                                <span class="status-badge warning">In Progress</span>
+                            </div>
+                            <div class="plan-details">
+                                <div class="plan-info">
+                                    <strong>Target Parameter:</strong> Objection Handling
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Enrolled Agents:</strong> 15 agents
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Duration:</strong> 2 weeks
+                                </div>
+                                <div class="plan-info">
+                                    <strong>Progress:</strong>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                    <span class="progress-text">60% Complete</span>
+                                </div>
+                            </div>
+                            <div class="plan-activities">
+                                <h4>Activities:</h4>
+                                <ul>
+                                    <li>✅ Video Training: Handling Difficult Customers (Completed)</li>
+                                    <li>✅ Group Discussion Sessions (Completed)</li>
+                                    <li>🔄 Practice Scenarios (In Progress)</li>
+                                    <li>⏳ Final Assessment (Upcoming)</li>
+                                </ul>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn-secondary btn-sm">View Details</button>
+                                <button class="btn-secondary btn-sm">Edit Plan</button>
+                                <button class="btn-primary btn-sm">Update Progress</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Create New Action Plan -->
+                <div class="section">
+                    <div class="create-plan-card">
+                        <h3>Create New Training Action Plan</h3>
+                        <form class="training-plan-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Plan Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter training plan name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Target Parameter</label>
+                                    <select class="form-control">
+                                        <option>Select parameter...</option>
+                                        <option>Call Opening & Greeting</option>
+                                        <option>Product Knowledge</option>
+                                        <option>Objection Handling</option>
+                                        <option>Documentation & Follow-up</option>
+                                        <option>Call Closing</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Select Agents</label>
+                                    <select class="form-control" multiple>
+                                        <option>All agents with low scores (Auto-select)</option>
+                                        <option>Sarah Johnson</option>
+                                        <option>Mike Chen</option>
+                                        <option>Emily Davis</option>
+                                        <option>James Wilson</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Duration (weeks)</label>
+                                    <input type="number" class="form-control" value="2" min="1" max="12">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Training Activities</label>
+                                <textarea class="form-control" rows="3" placeholder="List planned training activities..."></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Target Score Improvement</label>
+                                    <input type="number" class="form-control" placeholder="e.g., 15" min="1" max="100">
+                                    <small>Percentage points improvement target</small>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary">Save as Draft</button>
+                                <button type="submit" class="btn-primary">Create Action Plan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Closed Loop Tracking -->
+                <div class="section">
+                    <h2>Closed Loop Tracking</h2>
+                    <div class="table-card">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Training Plan</th>
+                                    <th>Completion Date</th>
+                                    <th>Agents Trained</th>
+                                    <th>Before Score</th>
+                                    <th>After Score</th>
+                                    <th>Improvement</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Empathy & Active Listening</td>
+                                    <td>2026-01-15</td>
+                                    <td>12 agents</td>
+                                    <td>76%</td>
+                                    <td>89%</td>
+                                    <td class="improvement-positive">+13%</td>
+                                    <td><span class="status-badge success">Closed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Compliance Training Q1</td>
+                                    <td>2026-01-10</td>
+                                    <td>45 agents</td>
+                                    <td>88%</td>
+                                    <td>96%</td>
+                                    <td class="improvement-positive">+8%</td>
+                                    <td><span class="status-badge success">Closed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>First Call Resolution</td>
+                                    <td>2026-01-05</td>
+                                    <td>8 agents</td>
+                                    <td>72%</td>
+                                    <td>85%</td>
+                                    <td class="improvement-positive">+13%</td>
+                                    <td><span class="status-badge success">Closed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
