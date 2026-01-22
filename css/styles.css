@@ -58,9 +58,9 @@ body {
     left: 10px;
     width: 40px;
     height: 40px;
-    background: #CC0000;
+    background: #000000;
     border: none;
-    border-radius: 4px;
+    border-radius: 0;
     cursor: pointer;
     z-index: 101;
     display: flex;
@@ -69,13 +69,13 @@ body {
     align-items: center;
     gap: 5px;
     padding: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
     transition: all 0.3s ease;
 }
 
 .hamburger-menu:hover {
-    background: #B00000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: #1a1a1a;
+    box-shadow: none;
 }
 
 .hamburger-menu span {
