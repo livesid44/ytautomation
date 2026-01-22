@@ -279,7 +279,14 @@
                                         <span class="emotion-tag">😌 Satisfied</span>
                                     </td>
                                     <td><span class="score-badge high">96%</span></td>
-                                    <td><button class="btn-link" onclick="openCallDetailsModal('12453', 'Sarah Johnson', '2026-01-22 10:30', '8m 32s', 'Positive', '92%', '96%')">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn" 
+                                        data-call-id="12453"
+                                        data-agent="Sarah Johnson"
+                                        data-datetime="2026-01-22 10:30"
+                                        data-duration="8m 32s"
+                                        data-sentiment="Positive"
+                                        data-sentiment-score="92%"
+                                        data-quality-score="96%">View Details</button></td>
                                 </tr>
                                 <tr>
                                     <td>#12452</td>
@@ -291,7 +298,14 @@
                                         <span class="emotion-tag">😊 Happy</span>
                                     </td>
                                     <td><span class="score-badge high">94%</span></td>
-                                    <td><button class="btn-link" onclick="openCallDetailsModal('12452', 'Mike Chen', '2026-01-22 10:15', '12m 18s', 'Positive', '88%', '94%')">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn"
+                                        data-call-id="12452"
+                                        data-agent="Mike Chen"
+                                        data-datetime="2026-01-22 10:15"
+                                        data-duration="12m 18s"
+                                        data-sentiment="Positive"
+                                        data-sentiment-score="88%"
+                                        data-quality-score="94%">View Details</button></td>
                                 </tr>
                                 <tr>
                                     <td>#12451</td>
@@ -303,7 +317,14 @@
                                         <span class="emotion-tag">😐 Neutral</span>
                                     </td>
                                     <td><span class="score-badge medium">82%</span></td>
-                                    <td><button class="btn-link" onclick="openCallDetailsModal('12451', 'Emily Davis', '2026-01-22 09:45', '6m 54s', 'Neutral', '75%', '82%')">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn"
+                                        data-call-id="12451"
+                                        data-agent="Emily Davis"
+                                        data-datetime="2026-01-22 09:45"
+                                        data-duration="6m 54s"
+                                        data-sentiment="Neutral"
+                                        data-sentiment-score="75%"
+                                        data-quality-score="82%">View Details</button></td>
                                 </tr>
                                 <tr>
                                     <td>#12450</td>
@@ -316,7 +337,14 @@
                                         <span class="emotion-tag">😐 Neutral</span>
                                     </td>
                                     <td><span class="score-badge medium">78%</span></td>
-                                    <td><button class="btn-link" onclick="openCallDetailsModal('12450', 'James Wilson', '2026-01-22 09:30', '15m 42s', 'Negative', '68%', '78%')">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn"
+                                        data-call-id="12450"
+                                        data-agent="James Wilson"
+                                        data-datetime="2026-01-22 09:30"
+                                        data-duration="15m 42s"
+                                        data-sentiment="Negative"
+                                        data-sentiment-score="68%"
+                                        data-quality-score="78%">View Details</button></td>
                                 </tr>
                                 <tr>
                                     <td>#12449</td>
@@ -329,7 +357,14 @@
                                         <span class="emotion-tag">😌 Satisfied</span>
                                     </td>
                                     <td><span class="score-badge high">98%</span></td>
-                                    <td><button class="btn-link" onclick="openCallDetailsModal('12449', 'Lisa Anderson', '2026-01-22 09:00', '9m 23s', 'Positive', '95%', '98%')">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn"
+                                        data-call-id="12449"
+                                        data-agent="Lisa Anderson"
+                                        data-datetime="2026-01-22 09:00"
+                                        data-duration="9m 23s"
+                                        data-sentiment="Positive"
+                                        data-sentiment-score="95%"
+                                        data-quality-score="98%">View Details</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -346,7 +381,7 @@
                                 <h4>Positive Pattern Detected</h4>
                             </div>
                             <p>Agents who use empathetic phrases early in calls show 23% higher positive sentiment scores.</p>
-                            <button class="btn-secondary btn-sm" onclick="openAnalysisModal()">View Analysis</button>
+                            <button class="btn-secondary btn-sm" id="viewAnalysisBtn">View Analysis</button>
                         </div>
                         <div class="insight-card">
                             <div class="insight-header">
@@ -354,7 +389,7 @@
                                 <h4>Alert: Sentiment Drop</h4>
                             </div>
                             <p>Technical support calls show a 12% increase in negative sentiment compared to last month.</p>
-                            <button class="btn-secondary btn-sm" onclick="openInvestigateModal()">Investigate</button>
+                            <button class="btn-secondary btn-sm" id="investigateBtn">Investigate</button>
                         </div>
                         <div class="insight-card">
                             <div class="insight-header">
@@ -362,7 +397,7 @@
                                 <h4>Recommendation</h4>
                             </div>
                             <p>Consider training on de-escalation techniques for calls with initial negative sentiment.</p>
-                            <button class="btn-secondary btn-sm" onclick="openTrainingModal()">Create Training</button>
+                            <button class="btn-secondary btn-sm" id="createTrainingBtn">Create Training</button>
                         </div>
                     </div>
                 </div>
@@ -888,6 +923,13 @@
     </div>
 
     <style>
+        /* CSS Custom Properties for reusable gradients */
+        :root {
+            --gradient-positive: linear-gradient(135deg, #27ae60, #2ecc71);
+            --gradient-negative: linear-gradient(135deg, #FF0000, #CC0000);
+            --color-neutral: #95a5a6;
+        }
+
         /* Chart Styles */
         .sentiment-trends-chart {
             padding: 20px;
@@ -915,15 +957,15 @@
         }
 
         .dot.green {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            background: var(--gradient-positive);
         }
 
         .dot.gray {
-            background: #95a5a6;
+            background: var(--color-neutral);
         }
 
         .dot.red {
-            background: linear-gradient(135deg, #FF0000, #CC0000);
+            background: var(--gradient-negative);
         }
 
         .chart-container {
@@ -1251,15 +1293,15 @@
         }
 
         .breakdown-fill.positive {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            background: var(--gradient-positive);
         }
 
         .breakdown-fill.neutral {
-            background: #95a5a6;
+            background: var(--color-neutral);
         }
 
         .breakdown-fill.negative {
-            background: linear-gradient(135deg, #FF0000, #CC0000, #990000);
+            background: var(--gradient-negative);
         }
 
         /* Analysis Modal Styles */
@@ -1446,15 +1488,15 @@
         }
 
         .bar.green {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            background: var(--gradient-positive);
         }
 
         .bar.gray {
-            background: #95a5a6;
+            background: var(--color-neutral);
         }
 
         .bar.red-gradient {
-            background: linear-gradient(135deg, #FF0000, #CC0000, #990000);
+            background: var(--gradient-negative);
         }
 
         .comparison-change {
@@ -1493,7 +1535,7 @@
         .trigger-rank {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #FF0000, #CC0000);
+            background: var(--gradient-negative);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -1839,28 +1881,54 @@
             }, 300);
         }
 
-        // Close modals on background click
+        // Event Listeners
         document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners to View Details buttons
+            document.querySelectorAll('.view-details-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    openCallDetailsModal(
+                        this.dataset.callId,
+                        this.dataset.agent,
+                        this.dataset.datetime,
+                        this.dataset.duration,
+                        this.dataset.sentiment,
+                        this.dataset.sentimentScore,
+                        this.dataset.qualityScore
+                    );
+                });
+            });
+
+            // Add event listeners to insight buttons
+            const viewAnalysisBtn = document.getElementById('viewAnalysisBtn');
+            if (viewAnalysisBtn) {
+                viewAnalysisBtn.addEventListener('click', openAnalysisModal);
+            }
+
+            const investigateBtn = document.getElementById('investigateBtn');
+            if (investigateBtn) {
+                investigateBtn.addEventListener('click', openInvestigateModal);
+            }
+
+            const createTrainingBtn = document.getElementById('createTrainingBtn');
+            if (createTrainingBtn) {
+                createTrainingBtn.addEventListener('click', openTrainingModal);
+            }
+
+            // Close modals on background click
             const modals = ['callDetailsModal', 'analysisModal', 'investigateModal', 'trainingModal'];
+            const closeFunctions = {
+                'callDetailsModal': closeCallDetailsModal,
+                'analysisModal': closeAnalysisModal,
+                'investigateModal': closeInvestigateModal,
+                'trainingModal': closeTrainingModal
+            };
+
             modals.forEach(modalId => {
                 const modal = document.getElementById(modalId);
                 if (modal) {
                     modal.addEventListener('click', function(e) {
                         if (e.target === this) {
-                            switch(modalId) {
-                                case 'callDetailsModal':
-                                    closeCallDetailsModal();
-                                    break;
-                                case 'analysisModal':
-                                    closeAnalysisModal();
-                                    break;
-                                case 'investigateModal':
-                                    closeInvestigateModal();
-                                    break;
-                                case 'trainingModal':
-                                    closeTrainingModal();
-                                    break;
-                            }
+                            closeFunctions[modalId]();
                         }
                     });
                 }
