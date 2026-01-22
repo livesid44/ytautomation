@@ -7,202 +7,162 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Sidebar Navigation -->
-    <div class="sideNav">
-        <ul class="list-unstyled">
-            <li>
-                <img src="images/quality.png" class="icon-menu" />
-                <b>QUALITY</b>
-            </li>
-            <li>
-                <a href="totalauditcount.html">
-                    <span>Total Audit Count</span>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>QA Analytics</h2>
+                <p>AI-Powered Platform</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item active">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
                 </a>
-            </li>
-            <li>
-                <a href="dashboards.html">
+                <a href="dashboards.html" class="nav-item">
+                    <span class="icon">📈</span>
                     <span>Quality Dashboards</span>
                 </a>
-            </li>
-            <li>
-                <a href="sentiment-analysis.html">
+                <a href="sentiment-analysis.html" class="nav-item">
+                    <span class="icon">😊</span>
                     <span>Sentiment Analysis</span>
                 </a>
-            </li>
-            <li>
-                <a href="call-audit.html">
+                <a href="form-designer.html" class="nav-item">
+                    <span class="icon">📝</span>
+                    <span>Form Designer</span>
+                </a>
+                <a href="call-audit.html" class="nav-item">
+                    <span class="icon">📞</span>
                     <span>Call Audit</span>
                 </a>
-            </li>
-            <li>
-                <a href="tni-module.html">
+                <a href="tni-module.html" class="nav-item">
+                    <span class="icon">🎓</span>
                     <span>TNI Module</span>
                 </a>
-            </li>
-            <li>
-                <img src="images/admin.png" class="icon-menu" />
-                <b>ADMIN</b>
-            </li>
-            <li>
-                <a href="form-designer.html">
-                    <span>Evaluation Form Designer</span>
-                </a>
-            </li>
-            <li>
-                <a href="configuration.html">
+                <a href="configuration.html" class="nav-item">
+                    <span class="icon">⚙️</span>
                     <span>Configuration</span>
                 </a>
-            </li>
-        </ul>
-    </div>
-    
-    <!-- Header -->
-    <nav class="navbar navbar-expand-sm">
-        <div class="container-fluid">
-            <a href="index.html">
-                <img class="sys-logo" src="images/logo-dark.png" alt="Logo" />
-            </a>
-            <div class="navbar-collapse" id="mynavbar">
-                <label class="logo me-auto"></label>
-                <img class="micro-logo logo2" src="images/Aura_logo.svg" alt="Aura Logo" />
-                <img class="micro-logo" src="images/techwhite.png" alt="Tech Logo" />
-            </div>
-        </div>
-    </nav>
+            </nav>
+        </aside>
 
-    <!-- Main Content -->
-    <div class="mainpg">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <label class="sub-title">Home > Quality</label>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Quality Automation Dashboard</h1>
+                <div class="header-actions">
+                    <button class="btn-secondary">Export Report</button>
+                    <div class="user-profile">
+                        <span>Admin User</span>
+                        <div class="avatar">AU</div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="title">Quality Automation Dashboard</div>
-                </div>
-            </div>
-            <hr />
+            </header>
+
+            <div class="content">
                 <!-- Key Metrics -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="metric-card-enterprise">
-                            <div class="metric-header">
-                                <i class="bi bi-graph-up-arrow metric-icon-enterprise"></i>
-                                <h3>Average Quality Score</h3>
-                            </div>
-                            <div class="metric-value-enterprise">87.5%</div>
-                            <div class="metric-trend positive"><i class="bi bi-arrow-up"></i> 3.2% from last month</div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">📊</div>
+                        <div class="metric-info">
+                            <h3>Average Quality Score</h3>
+                            <div class="metric-value">87.5%</div>
+                            <div class="metric-trend positive">↑ 3.2% from last month</div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="metric-card-enterprise">
-                            <div class="metric-header">
-                                <i class="bi bi-telephone-fill metric-icon-enterprise"></i>
-                                <h3>Calls Analyzed</h3>
-                            </div>
-                            <div class="metric-value-enterprise">12,453</div>
-                            <div class="metric-trend positive"><i class="bi bi-arrow-up"></i> 8.1% from last month</div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📞</div>
+                        <div class="metric-info">
+                            <h3>Calls Analyzed</h3>
+                            <div class="metric-value">12,453</div>
+                            <div class="metric-trend positive">↑ 8.1% from last month</div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="metric-card-enterprise">
-                            <div class="metric-header">
-                                <i class="bi bi-emoji-smile-fill metric-icon-enterprise"></i>
-                                <h3>Positive Sentiment</h3>
-                            </div>
-                            <div class="metric-value-enterprise">76.3%</div>
-                            <div class="metric-trend negative"><i class="bi bi-arrow-down"></i> 1.5% from last month</div>
+                    <div class="metric-card">
+                        <div class="metric-icon">😊</div>
+                        <div class="metric-info">
+                            <h3>Positive Sentiment</h3>
+                            <div class="metric-value">76.3%</div>
+                            <div class="metric-trend negative">↓ 1.5% from last month</div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="metric-card-enterprise">
-                            <div class="metric-header">
-                                <i class="bi bi-mortarboard-fill metric-icon-enterprise"></i>
-                                <h3>Training Needs</h3>
-                            </div>
-                            <div class="metric-value-enterprise">23</div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🎓</div>
+                        <div class="metric-info">
+                            <h3>Training Needs</h3>
+                            <div class="metric-value">23</div>
                             <div class="metric-trend neutral">Same as last month</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Quick Actions -->
-                <div class="section mt-4">
-                    <h2 class="title2">Quick Actions</h2>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <a href="call-audit.html" class="action-card-enterprise">
-                                <i class="bi bi-search action-icon-enterprise"></i>
-                                <h3>Review Calls</h3>
-                                <p>Audit and analyze call quality</p>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="form-designer.html" class="action-card-enterprise">
-                                <i class="bi bi-file-earmark-text action-icon-enterprise"></i>
-                                <h3>Create Form</h3>
-                                <p>Design quality evaluation forms</p>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="tni-module.html" class="action-card-enterprise">
-                                <i class="bi bi-book action-icon-enterprise"></i>
-                                <h3>Training Plan</h3>
-                                <p>Plan agent training sessions</p>
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="dashboards.html" class="action-card-enterprise">
-                                <i class="bi bi-bar-chart-line action-icon-enterprise"></i>
-                                <h3>View Analytics</h3>
-                                <p>Explore quality dashboards</p>
-                            </a>
-                        </div>
+                <div class="section">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <a href="call-audit.html" class="action-card">
+                            <div class="action-icon">🔍</div>
+                            <h3>Review Calls</h3>
+                            <p>Audit and analyze call quality</p>
+                        </a>
+                        <a href="form-designer.html" class="action-card">
+                            <div class="action-icon">✏️</div>
+                            <h3>Create Form</h3>
+                            <p>Design quality evaluation forms</p>
+                        </a>
+                        <a href="tni-module.html" class="action-card">
+                            <div class="action-icon">📚</div>
+                            <h3>Training Plan</h3>
+                            <p>Plan agent training sessions</p>
+                        </a>
+                        <a href="dashboards.html" class="action-card">
+                            <div class="action-icon">📈</div>
+                            <h3>View Analytics</h3>
+                            <p>Explore quality dashboards</p>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Recent Activity -->
-                <div class="section mt-4">
-                    <h2 class="title2">Recent Activity</h2>
-                    <div class="white-bg">
-                        <div class="activity-list-enterprise">
-                            <div class="activity-item-enterprise">
-                                <i class="bi bi-telephone-fill activity-icon-enterprise text-primary"></i>
-                                <div class="activity-content">
-                                    <h4>Call #12453 analyzed</h4>
-                                    <p>Quality score: 92% - Excellent performance</p>
-                                    <span class="activity-time">2 minutes ago</span>
-                                </div>
+                <div class="section">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">📞</div>
+                            <div class="activity-content">
+                                <h4>Call #12453 analyzed</h4>
+                                <p>Quality score: 92% - Excellent performance</p>
+                                <span class="activity-time">2 minutes ago</span>
                             </div>
-                            <div class="activity-item-enterprise">
-                                <i class="bi bi-file-earmark-text-fill activity-icon-enterprise text-success"></i>
-                                <div class="activity-content">
-                                    <h4>New evaluation form created</h4>
-                                    <p>Customer Service Quality v2.0</p>
-                                    <span class="activity-time">1 hour ago</span>
-                                </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">📝</div>
+                            <div class="activity-content">
+                                <h4>New evaluation form created</h4>
+                                <p>Customer Service Quality v2.0</p>
+                                <span class="activity-time">1 hour ago</span>
                             </div>
-                            <div class="activity-item-enterprise">
-                                <i class="bi bi-mortarboard-fill activity-icon-enterprise text-warning"></i>
-                                <div class="activity-content">
-                                    <h4>Training plan approved</h4>
-                                    <p>Communication Skills - 5 agents enrolled</p>
-                                    <span class="activity-time">3 hours ago</span>
-                                </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">🎓</div>
+                            <div class="activity-content">
+                                <h4>Training plan approved</h4>
+                                <p>Communication Skills - 5 agents enrolled</p>
+                                <span class="activity-time">3 hours ago</span>
                             </div>
-                            <div class="activity-item-enterprise">
-                                <i class="bi bi-gear-fill activity-icon-enterprise text-secondary"></i>
-                                <div class="activity-content">
-                                    <h4>Auto-sync configured</h4>
-                                    <p>Daily sync scheduled for 02:00 AM</p>
-                                    <span class="activity-time">5 hours ago</span>
-                                </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">⚙️</div>
+                            <div class="activity-content">
+                                <h4>Auto-sync configured</h4>
+                                <p>Daily sync scheduled for 02:00 AM</p>
+                                <span class="activity-time">5 hours ago</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 
     <script src="js/app.js"></script>

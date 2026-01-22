@@ -7,72 +7,47 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Sidebar Navigation -->
-    <div class="sideNav">
-        <ul class="list-unstyled">
-            <li>
-                <img src="images/quality.png" class="icon-menu" />
-                <b>QUALITY</b>
-            </li>
-            <li>
-                <a href="totalauditcount.html">
-                    <span>Total Audit Count</span>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>QA Analytics</h2>
+                <p>AI-Powered Platform</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
                 </a>
-            </li>
-            <li>
-                <a href="dashboards.html">
+                <a href="dashboards.html" class="nav-item">
+                    <span class="icon">📈</span>
                     <span>Quality Dashboards</span>
                 </a>
-            </li>
-            <li>
-                <a href="sentiment-analysis.html">
+                <a href="sentiment-analysis.html" class="nav-item">
+                    <span class="icon">😊</span>
                     <span>Sentiment Analysis</span>
                 </a>
-            </li>
-            <li>
-                <a href="call-audit.html">
+                <a href="form-designer.html" class="nav-item">
+                    <span class="icon">📝</span>
+                    <span>Form Designer</span>
+                </a>
+                <a href="call-audit.html" class="nav-item">
+                    <span class="icon">📞</span>
                     <span>Call Audit</span>
                 </a>
-            </li>
-            <li>
-                <a href="tni-module.html">
+                <a href="tni-module.html" class="nav-item">
+                    <span class="icon">🎓</span>
                     <span>TNI Module</span>
                 </a>
-            </li>
-            <li>
-                <img src="images/admin.png" class="icon-menu" />
-                <b>ADMIN</b>
-            </li>
-            <li>
-                <a href="form-designer.html">
-                    <span>Evaluation Form Designer</span>
-                </a>
-            </li>
-            <li>
-                <a href="configuration.html" class="active">
+                <a href="configuration.html" class="nav-item active">
+                    <span class="icon">⚙️</span>
                     <span>Configuration</span>
                 </a>
-            </li>
-        </ul>
-    </div>
-    
-    <!-- Header -->
-    <nav class="navbar navbar-expand-sm">
-        <div class="container-fluid">
-            <a href="index.html">
-                <img class="sys-logo" src="images/logo-dark.png" alt="Logo" />
-            </a>
-            <div class="navbar-collapse" id="mynavbar">
-                <label class="logo me-auto"></label>
-                <img class="micro-logo logo2" src="images/Aura_logo.svg" alt="Aura Logo" />
-                <img class="micro-logo" src="images/techwhite.png" alt="Tech Logo" />
-            </div>
-        </div>
-    </nav>
+            </nav>
+        </aside>
 
-    <!-- Main Content -->
-    <div class="mainpg">
-        <div class="container-fluid">
+        <!-- Main Content -->
+        <main class="main-content">
             <header class="header">
                 <h1>System Configuration</h1>
                 <div class="header-actions">
@@ -332,59 +307,6 @@
 
                         <div class="config-card">
                             <div class="config-header">
-                                <h3>AI Model Configuration</h3>
-                            </div>
-                            <div class="config-form">
-                                <div class="form-group">
-                                    <label>Language</label>
-                                    <select class="form-control" multiple size="5">
-                                        <option selected>English</option>
-                                        <option selected>Spanish</option>
-                                        <option>French</option>
-                                        <option>German</option>
-                                        <option>Italian</option>
-                                        <option>Portuguese</option>
-                                        <option>Chinese (Mandarin)</option>
-                                        <option>Japanese</option>
-                                        <option>Korean</option>
-                                        <option>Hindi</option>
-                                        <option>Arabic</option>
-                                    </select>
-                                    <small>Hold Ctrl (Cmd on Mac) to select multiple languages</small>
-                                </div>
-                                <div class="form-group">
-                                    <label>LLM Name</label>
-                                    <select class="form-control">
-                                        <option>GPT-4</option>
-                                        <option selected>GPT-4-Turbo</option>
-                                        <option>GPT-3.5-Turbo</option>
-                                        <option>Claude 3 Opus</option>
-                                        <option>Claude 3 Sonnet</option>
-                                        <option>Claude 3 Haiku</option>
-                                        <option>Gemini Pro</option>
-                                        <option>Llama 3</option>
-                                        <option>Mistral Large</option>
-                                    </select>
-                                    <small>Select the large language model for quality analysis</small>
-                                </div>
-                                <div class="form-group">
-                                    <label>Speech Engine</label>
-                                    <select class="form-control">
-                                        <option>Google Cloud Speech-to-Text</option>
-                                        <option selected>Azure Speech Services</option>
-                                        <option>AWS Transcribe</option>
-                                        <option>AssemblyAI</option>
-                                        <option>Deepgram</option>
-                                        <option>Whisper (OpenAI)</option>
-                                        <option>Rev.ai</option>
-                                    </select>
-                                    <small>Speech-to-text engine for call transcription</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="config-card">
-                            <div class="config-header">
                                 <h3>Auto-flagging Rules</h3>
                             </div>
                             <div class="config-form">
@@ -549,7 +471,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 
     <script src="js/app.js"></script>
