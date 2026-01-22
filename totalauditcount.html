@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>totalauditcount | YT Automation</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/bootstrap-icons.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -66,10 +63,7 @@
             <a href="totalauditcount.html">
                 <img class="sys-logo" src="images/logo-dark.png" alt="Logo" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mynavbar">
+            <div class="navbar-collapse" id="mynavbar">
                 <label class="logo me-auto"></label>
                 <img class="micro-logo logo2" src="images/Aura_logo.svg" alt="Aura Logo" />
                 <img class="micro-logo" src="images/techwhite.png" alt="Tech Logo" />
@@ -98,10 +92,10 @@
             <!-- Tab Navigation -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#Quality1">T1 Quality Overview</a>
+                    <a class="nav-link active" href="#Quality1">T1 Quality Overview</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#Quality2">T2 Quality Overview</a>
+                    <a class="nav-link" href="#Quality2">T2 Quality Overview</a>
                 </li>
             </ul>
 
@@ -178,7 +172,7 @@
                     </div>
                 </div>
 
-                <div id="Quality2" class="tab-pane fade">
+                <div id="Quality2" class="tab-pane">
                     <div class="grey-bg">
                         <div class="row flex-row">
                             <div class="col-md-6">
@@ -243,8 +237,27 @@
     </div>
 
     <script>
-        // Chart placeholders - ready for Chart.js integration
+        // Tab functionality
         document.addEventListener('DOMContentLoaded', function() {
+            const tabLinks = document.querySelectorAll('.nav-tabs .nav-link');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Remove active class from all tabs and panes
+                    tabLinks.forEach(l => l.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding pane
+                    this.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+            
+            // Chart placeholders - ready for Chart.js integration
             // Placeholder for T1 Quality Chart
             const chartCanvas1 = document.getElementById('chart1');
             if (chartCanvas1) {
