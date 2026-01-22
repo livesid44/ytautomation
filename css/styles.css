@@ -459,11 +459,11 @@ body {
     border-bottom-color: #667eea;
 }
 
-.tab-content {
+.tab-pane {
     display: none;
 }
 
-.tab-content.active {
+.tab-pane.active {
     display: block;
 }
 

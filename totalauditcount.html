@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>totalauditcount | YT Automation</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -253,7 +252,10 @@
                     
                     // Add active class to clicked tab and corresponding pane
                     this.classList.add('active');
-                    document.getElementById(targetId).classList.add('active');
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.classList.add('active');
+                    }
                 });
             });
             
