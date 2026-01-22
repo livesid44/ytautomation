@@ -7,40 +7,71 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu" onclick="toggleSidebar()" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <div class="container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="logo">
-                <h2>QA Analytics</h2>
-                <p>AI-Powered Platform</p>
-            </div>
-            <nav class="nav-menu">
-                <a href="index.html" class="nav-item">
-                    <span class="icon">📊</span>
+        <aside class="sidebar" id="sidebar">
+<nav class="nav-menu">
+                <a href="index.html" class="nav-item" title="Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    </span>
                     <span>Dashboard</span>
                 </a>
-                <a href="dashboards.html" class="nav-item">
+                <a href="dashboards.html" class="nav-item" title="Quality Dashboards">
                     <span class="icon">📈</span>
                     <span>Quality Dashboards</span>
                 </a>
-                <a href="sentiment-analysis.html" class="nav-item active">
+                <a href="qa-dashboard.html" class="nav-item" title="CSO Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </span>
+                    <span>QA Dashboard</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item" title="Sentiment Analysis active">
                     <span class="icon">😊</span>
                     <span>Sentiment Analysis</span>
                 </a>
-                <a href="form-designer.html" class="nav-item">
+                <a href="form-designer.html" class="nav-item" title="Form Designer">
                     <span class="icon">📝</span>
                     <span>Form Designer</span>
                 </a>
-                <a href="call-audit.html" class="nav-item">
+                <a href="call-audit.html" class="nav-item" title="Call Audit">
                     <span class="icon">📞</span>
                     <span>Call Audit</span>
                 </a>
-                <a href="tni-module.html" class="nav-item">
+                <a href="my-bin-qa.html" class="nav-item" title="My Bin QA">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    </span>
+                    <span>My Bin QA</span>
+                </a>
+                <a href="hitl-dashboard.html" class="nav-item" title="HITL Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7-6h4v2h-4zm0 4h4v2h-4zm0 4h4v2h-4z"/></svg>
+                    </span>
+                    <span>HITL Dashboard</span>
+                </a>
+                <a href="ai-audit-config.html" class="nav-item" title="AI Audit Config">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                    </span>
+                    <span>AI Audit Config</span>
+                </a>
+                <a href="tni-module.html" class="nav-item" title="TNI Module">
                     <span class="icon">🎓</span>
                     <span>TNI Module</span>
                 </a>
-                <a href="configuration.html" class="nav-item">
-                    <span class="icon">⚙️</span>
+                <a href="configuration.html" class="nav-item" title="Configuration">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94L14.4 2.81c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    </span>
                     <span>Configuration</span>
                 </a>
             </nav>
@@ -167,14 +198,72 @@
                 <!-- Sentiment Trends -->
                 <div class="chart-card full-width">
                     <h3>Sentiment Trends Over Time</h3>
-                    <div class="chart-placeholder">
-                        <div class="sentiment-chart">
-                            <div class="chart-legend">
-                                <span class="legend-item"><span class="dot green"></span> Positive</span>
-                                <span class="legend-item"><span class="dot gray"></span> Neutral</span>
-                                <span class="legend-item"><span class="dot red"></span> Negative</span>
+                    <div class="sentiment-trends-chart">
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="dot green"></span> Positive</span>
+                            <span class="legend-item"><span class="dot gray"></span> Neutral</span>
+                            <span class="legend-item"><span class="dot red"></span> Negative</span>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-y-axis">
+                                <span>100%</span>
+                                <span>75%</span>
+                                <span>50%</span>
+                                <span>25%</span>
+                                <span>0%</span>
                             </div>
-                            <div class="chart-info">Multi-line chart showing sentiment trends would be rendered here</div>
+                            <div class="chart-area">
+                                <div class="chart-grid">
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                </div>
+                                <svg class="chart-svg" viewBox="0 0 700 300" preserveAspectRatio="none">
+                                    <polyline class="line-positive" points="0,60 100,55 200,50 300,52 400,48 500,45 600,42 700,40"></polyline>
+                                    <polyline class="line-neutral" points="0,230 100,225 200,220 300,218 400,215 500,212 600,210 700,208"></polyline>
+                                    <polyline class="line-negative" points="0,285 100,283 200,280 300,278 400,275 500,273 600,270 700,268"></polyline>
+                                </svg>
+                                <div class="chart-points">
+                                    <div class="point positive" style="left: 0%; bottom: 80%"></div>
+                                    <div class="point positive" style="left: 14.3%; bottom: 81.7%"></div>
+                                    <div class="point positive" style="left: 28.6%; bottom: 83.3%"></div>
+                                    <div class="point positive" style="left: 42.9%; bottom: 82.7%"></div>
+                                    <div class="point positive" style="left: 57.2%; bottom: 84%"></div>
+                                    <div class="point positive" style="left: 71.5%; bottom: 85%"></div>
+                                    <div class="point positive" style="left: 85.8%; bottom: 86%"></div>
+                                    <div class="point positive" style="left: 100%; bottom: 86.7%"></div>
+                                    
+                                    <div class="point neutral" style="left: 0%; bottom: 23.3%"></div>
+                                    <div class="point neutral" style="left: 14.3%; bottom: 25%"></div>
+                                    <div class="point neutral" style="left: 28.6%; bottom: 26.7%"></div>
+                                    <div class="point neutral" style="left: 42.9%; bottom: 27.3%"></div>
+                                    <div class="point neutral" style="left: 57.2%; bottom: 28.3%"></div>
+                                    <div class="point neutral" style="left: 71.5%; bottom: 29.3%"></div>
+                                    <div class="point neutral" style="left: 85.8%; bottom: 30%"></div>
+                                    <div class="point neutral" style="left: 100%; bottom: 30.7%"></div>
+                                    
+                                    <div class="point negative" style="left: 0%; bottom: 5%"></div>
+                                    <div class="point negative" style="left: 14.3%; bottom: 5.7%"></div>
+                                    <div class="point negative" style="left: 28.6%; bottom: 6.7%"></div>
+                                    <div class="point negative" style="left: 42.9%; bottom: 7.3%"></div>
+                                    <div class="point negative" style="left: 57.2%; bottom: 8.3%"></div>
+                                    <div class="point negative" style="left: 71.5%; bottom: 9%"></div>
+                                    <div class="point negative" style="left: 85.8%; bottom: 10%"></div>
+                                    <div class="point negative" style="left: 100%; bottom: 10.7%"></div>
+                                </div>
+                            </div>
+                            <div class="chart-x-axis">
+                                <span>Jan 16</span>
+                                <span>Jan 17</span>
+                                <span>Jan 18</span>
+                                <span>Jan 19</span>
+                                <span>Jan 20</span>
+                                <span>Jan 21</span>
+                                <span>Jan 22</span>
+                                <span>Today</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,7 +297,14 @@
                                         <span class="emotion-tag">😌 Satisfied</span>
                                     </td>
                                     <td><span class="score-badge high">96%</span></td>
-                                    <td><button class="btn-link">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn" 
+                                        data-call-id="12453"
+                                        data-agent="Sarah Johnson"
+                                        data-datetime="2026-01-22 10:30"
+                                        data-duration="8m 32s"
+                                        data-sentiment="Positive"
+                                        data-sentiment-score="92%"
+                                        data-quality-score="96%">View Details</button></td>
                                 </tr>
                                 <tr>
                                     <td>#12452</td>
@@ -220,7 +316,14 @@
                                         <span class="emotion-tag">😊 Happy</span>
                                     </td>
                                     <td><span class="score-badge high">94%</span></td>
-                                    <td><button class="btn-link">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn"
+                                        data-call-id="12452"
+                                        data-agent="Mike Chen"
+                                        data-datetime="2026-01-22 10:15"
+                                        data-duration="12m 18s"
+                                        data-sentiment="Positive"
+                                        data-sentiment-score="88%"
+                                        data-quality-score="94%">View Details</button></td>
                                 </tr>
                                 <tr>
                                     <td>#12451</td>
@@ -232,7 +335,14 @@
                                         <span class="emotion-tag">😐 Neutral</span>
                                     </td>
                                     <td><span class="score-badge medium">82%</span></td>
-                                    <td><button class="btn-link">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn"
+                                        data-call-id="12451"
+                                        data-agent="Emily Davis"
+                                        data-datetime="2026-01-22 09:45"
+                                        data-duration="6m 54s"
+                                        data-sentiment="Neutral"
+                                        data-sentiment-score="75%"
+                                        data-quality-score="82%">View Details</button></td>
                                 </tr>
                                 <tr>
                                     <td>#12450</td>
@@ -245,7 +355,14 @@
                                         <span class="emotion-tag">😐 Neutral</span>
                                     </td>
                                     <td><span class="score-badge medium">78%</span></td>
-                                    <td><button class="btn-link">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn"
+                                        data-call-id="12450"
+                                        data-agent="James Wilson"
+                                        data-datetime="2026-01-22 09:30"
+                                        data-duration="15m 42s"
+                                        data-sentiment="Negative"
+                                        data-sentiment-score="68%"
+                                        data-quality-score="78%">View Details</button></td>
                                 </tr>
                                 <tr>
                                     <td>#12449</td>
@@ -258,7 +375,14 @@
                                         <span class="emotion-tag">😌 Satisfied</span>
                                     </td>
                                     <td><span class="score-badge high">98%</span></td>
-                                    <td><button class="btn-link">View Details</button></td>
+                                    <td><button class="btn-link view-details-btn"
+                                        data-call-id="12449"
+                                        data-agent="Lisa Anderson"
+                                        data-datetime="2026-01-22 09:00"
+                                        data-duration="9m 23s"
+                                        data-sentiment="Positive"
+                                        data-sentiment-score="95%"
+                                        data-quality-score="98%">View Details</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -275,7 +399,7 @@
                                 <h4>Positive Pattern Detected</h4>
                             </div>
                             <p>Agents who use empathetic phrases early in calls show 23% higher positive sentiment scores.</p>
-                            <button class="btn-secondary btn-sm">View Analysis</button>
+                            <button class="btn-secondary btn-sm" id="viewAnalysisBtn">View Analysis</button>
                         </div>
                         <div class="insight-card">
                             <div class="insight-header">
@@ -283,7 +407,7 @@
                                 <h4>Alert: Sentiment Drop</h4>
                             </div>
                             <p>Technical support calls show a 12% increase in negative sentiment compared to last month.</p>
-                            <button class="btn-secondary btn-sm">Investigate</button>
+                            <button class="btn-secondary btn-sm" id="investigateBtn">Investigate</button>
                         </div>
                         <div class="insight-card">
                             <div class="insight-header">
@@ -291,7 +415,7 @@
                                 <h4>Recommendation</h4>
                             </div>
                             <p>Consider training on de-escalation techniques for calls with initial negative sentiment.</p>
-                            <button class="btn-secondary btn-sm">Create Training</button>
+                            <button class="btn-secondary btn-sm" id="createTrainingBtn">Create Training</button>
                         </div>
                     </div>
                 </div>
@@ -299,6 +423,1546 @@
         </main>
     </div>
 
+    <!-- Call Details Modal -->
+    <div class="modal" id="callDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Call Details - <span id="callId">#12453</span></h2>
+                <button class="modal-close" data-modal="callDetailsModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="call-info-grid">
+                    <div class="info-item">
+                        <strong>Agent:</strong> <span id="callAgent">Sarah Johnson</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Date/Time:</strong> <span id="callDateTime">2026-01-22 10:30</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Duration:</strong> <span id="callDuration">8m 32s</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Sentiment:</strong> <span id="callSentiment" class="sentiment-badge positive">Positive (92%)</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Quality Score:</strong> <span id="callScore" class="score-badge high">96%</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">Call Transcript with Sentiment</h3>
+                <div class="transcript-timeline">
+                    <div class="transcript-segment sentiment-positive">
+                        <div class="segment-time">00:00</div>
+                        <div class="segment-content">
+                            <strong>Agent:</strong> Good morning! Thank you for calling TechSupport. My name is Sarah. How can I help you today?
+                            <span class="sentiment-indicator positive">😊 Positive</span>
+                        </div>
+                    </div>
+                    <div class="transcript-segment sentiment-neutral">
+                        <div class="segment-time">00:12</div>
+                        <div class="segment-content">
+                            <strong>Customer:</strong> Hi, I'm having issues with my account login.
+                            <span class="sentiment-indicator neutral">😐 Neutral</span>
+                        </div>
+                    </div>
+                    <div class="transcript-segment sentiment-positive">
+                        <div class="segment-time">00:18</div>
+                        <div class="segment-content">
+                            <strong>Agent:</strong> I understand how frustrating that can be. Let me help you resolve this right away.
+                            <span class="sentiment-indicator positive">😊 Positive</span>
+                        </div>
+                    </div>
+                    <div class="transcript-segment sentiment-positive">
+                        <div class="segment-time">00:35</div>
+                        <div class="segment-content">
+                            <strong>Customer:</strong> Thank you, I really appreciate your help.
+                            <span class="sentiment-indicator positive">😊 Positive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">Emotion Timeline</h3>
+                <div class="emotion-timeline">
+                    <div class="timeline-bar">
+                        <div class="timeline-segment" style="width: 25%; background: linear-gradient(135deg, #27ae60, #2ecc71);" title="Happy - 25%"></div>
+                        <div class="timeline-segment" style="width: 50%; background: linear-gradient(135deg, #27ae60, #2ecc71);" title="Satisfied - 50%"></div>
+                        <div class="timeline-segment" style="width: 15%; background: #95a5a6;" title="Neutral - 15%"></div>
+                        <div class="timeline-segment" style="width: 10%; background: linear-gradient(135deg, #27ae60, #2ecc71);" title="Happy - 10%"></div>
+                    </div>
+                    <div class="timeline-labels">
+                        <span>Start</span>
+                        <span>Middle</span>
+                        <span>End</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">Key Moments Detected</h3>
+                <div class="key-moments">
+                    <div class="moment-card positive">
+                        <div class="moment-time">00:18</div>
+                        <div class="moment-type">Empathy Expression</div>
+                        <div class="moment-text">"I understand how frustrating that can be"</div>
+                        <div class="moment-impact">+15% sentiment boost</div>
+                    </div>
+                    <div class="moment-card positive">
+                        <div class="moment-time">02:45</div>
+                        <div class="moment-type">Problem Resolution</div>
+                        <div class="moment-text">Successfully reset customer password</div>
+                        <div class="moment-impact">+25% sentiment boost</div>
+                    </div>
+                    <div class="moment-card positive">
+                        <div class="moment-time">07:30</div>
+                        <div class="moment-type">Follow-up Offer</div>
+                        <div class="moment-text">"Is there anything else I can help you with?"</div>
+                        <div class="moment-impact">+10% sentiment boost</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">Sentiment Score Breakdown</h3>
+                <div class="score-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Positive Interactions</div>
+                        <div class="breakdown-bar">
+                            <div class="breakdown-fill positive" style="width: 92%">92%</div>
+                        </div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Neutral Interactions</div>
+                        <div class="breakdown-bar">
+                            <div class="breakdown-fill neutral" style="width: 8%">8%</div>
+                        </div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label">Negative Interactions</div>
+                        <div class="breakdown-bar">
+                            <div class="breakdown-fill negative" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal-btn" data-modal="callDetailsModal">Close</button>
+                <button class="btn-primary">Download Report</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analysis Modal -->
+    <div class="modal" id="analysisModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sentiment Pattern Analysis</h2>
+                <button class="modal-close" data-modal="analysisModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3 style="margin-bottom: 20px;">Empathy Phrases Effectiveness</h3>
+                <div class="effectiveness-chart">
+                    <div class="effectiveness-row">
+                        <div class="phrase-label">"I understand..."</div>
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 85%; background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                                <span>+23% sentiment boost</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="effectiveness-row">
+                        <div class="phrase-label">"I'm sorry to hear..."</div>
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 78%; background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                                <span>+19% sentiment boost</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="effectiveness-row">
+                        <div class="phrase-label">"Let me help you..."</div>
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 92%; background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                                <span>+27% sentiment boost</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="effectiveness-row">
+                        <div class="phrase-label">"I appreciate your patience"</div>
+                        <div class="effectiveness-bar">
+                            <div class="effectiveness-fill" style="width: 70%; background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                                <span>+15% sentiment boost</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px; margin-bottom: 20px;">Call Opening Sentiment Impact</h3>
+                <div class="opening-impact">
+                    <div class="impact-comparison">
+                        <div class="impact-card">
+                            <div class="impact-type">Positive Opening</div>
+                            <div class="impact-value">89%</div>
+                            <div class="impact-label">Avg Final Sentiment</div>
+                        </div>
+                        <div class="impact-arrow">→</div>
+                        <div class="impact-card">
+                            <div class="impact-type">Neutral Opening</div>
+                            <div class="impact-value">72%</div>
+                            <div class="impact-label">Avg Final Sentiment</div>
+                        </div>
+                        <div class="impact-arrow">→</div>
+                        <div class="impact-card">
+                            <div class="impact-type">Negative Opening</div>
+                            <div class="impact-value">58%</div>
+                            <div class="impact-label">Avg Final Sentiment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px; margin-bottom: 20px;">Response Time Correlation</h3>
+                <div class="correlation-grid">
+                    <div class="correlation-item">
+                        <div class="correlation-header">
+                            <div class="correlation-icon">⚡</div>
+                            <div class="correlation-title">Fast Response (&lt;30s)</div>
+                        </div>
+                        <div class="correlation-stat">92% Positive</div>
+                        <div class="correlation-detail">Average sentiment score</div>
+                    </div>
+                    <div class="correlation-item">
+                        <div class="correlation-header">
+                            <div class="correlation-icon">⏱️</div>
+                            <div class="correlation-title">Medium Response (30-60s)</div>
+                        </div>
+                        <div class="correlation-stat">78% Positive</div>
+                        <div class="correlation-detail">Average sentiment score</div>
+                    </div>
+                    <div class="correlation-item">
+                        <div class="correlation-header">
+                            <div class="correlation-icon">⏳</div>
+                            <div class="correlation-title">Slow Response (&gt;60s)</div>
+                        </div>
+                        <div class="correlation-stat">62% Positive</div>
+                        <div class="correlation-detail">Average sentiment score</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal-btn" data-modal="analysisModal">Close</button>
+                <button class="btn-primary">Export Analysis</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Investigate Modal -->
+    <div class="modal" id="investigateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Technical Support Sentiment Investigation</h2>
+                <button class="modal-close" data-modal="investigateModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3 style="margin-bottom: 20px;">Sentiment Comparison: Current vs Previous Month</h3>
+                <div class="comparison-chart">
+                    <div class="comparison-bars">
+                        <div class="comparison-group">
+                            <div class="comparison-label">Positive Sentiment</div>
+                            <div class="bar-container">
+                                <div class="bar-row">
+                                    <span class="bar-month">This Month</span>
+                                    <div class="bar-wrapper">
+                                        <div class="bar green" style="width: 68%;">68%</div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-month">Last Month</span>
+                                    <div class="bar-wrapper">
+                                        <div class="bar green" style="width: 76%;">76%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-change negative">-8% ▼</div>
+                        </div>
+                        <div class="comparison-group">
+                            <div class="comparison-label">Neutral Sentiment</div>
+                            <div class="bar-container">
+                                <div class="bar-row">
+                                    <span class="bar-month">This Month</span>
+                                    <div class="bar-wrapper">
+                                        <div class="bar gray" style="width: 20%;">20%</div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-month">Last Month</span>
+                                    <div class="bar-wrapper">
+                                        <div class="bar gray" style="width: 18%;">18%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-change neutral">+2%</div>
+                        </div>
+                        <div class="comparison-group">
+                            <div class="comparison-label">Negative Sentiment</div>
+                            <div class="bar-container">
+                                <div class="bar-row">
+                                    <span class="bar-month">This Month</span>
+                                    <div class="bar-wrapper">
+                                        <div class="bar red-gradient" style="width: 12%;">12%</div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-month">Last Month</span>
+                                    <div class="bar-wrapper">
+                                        <div class="bar red-gradient" style="width: 6%;">6%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-change negative">+6% ▲</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px; margin-bottom: 20px;">Top Negative Triggers</h3>
+                <div class="triggers-list">
+                    <div class="trigger-item">
+                        <div class="trigger-rank">1</div>
+                        <div class="trigger-content">
+                            <div class="trigger-title">Long Wait Times</div>
+                            <div class="trigger-detail">Average wait: 8m 23s | Impact: -32% sentiment</div>
+                        </div>
+                        <div class="trigger-count">247 occurrences</div>
+                    </div>
+                    <div class="trigger-item">
+                        <div class="trigger-rank">2</div>
+                        <div class="trigger-content">
+                            <div class="trigger-title">Multiple Transfers</div>
+                            <div class="trigger-detail">Average transfers: 2.3 | Impact: -28% sentiment</div>
+                        </div>
+                        <div class="trigger-count">189 occurrences</div>
+                    </div>
+                    <div class="trigger-item">
+                        <div class="trigger-rank">3</div>
+                        <div class="trigger-content">
+                            <div class="trigger-title">Unresolved Issues</div>
+                            <div class="trigger-detail">Resolution rate: 67% | Impact: -45% sentiment</div>
+                        </div>
+                        <div class="trigger-count">156 occurrences</div>
+                    </div>
+                    <div class="trigger-item">
+                        <div class="trigger-rank">4</div>
+                        <div class="trigger-content">
+                            <div class="trigger-title">Technical Jargon</div>
+                            <div class="trigger-detail">Customer confusion detected | Impact: -18% sentiment</div>
+                        </div>
+                        <div class="trigger-count">134 occurrences</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px; margin-bottom: 20px;">Agent Performance Breakdown</h3>
+                <div class="agent-performance">
+                    <div class="performance-table">
+                        <div class="performance-header">
+                            <div>Agent</div>
+                            <div>Calls</div>
+                            <div>Avg Sentiment</div>
+                            <div>Trend</div>
+                        </div>
+                        <div class="performance-row">
+                            <div class="agent-name">Sarah Johnson</div>
+                            <div>156</div>
+                            <div><span class="score-badge high">82%</span></div>
+                            <div class="trend positive">+5%</div>
+                        </div>
+                        <div class="performance-row">
+                            <div class="agent-name">Mike Chen</div>
+                            <div>143</div>
+                            <div><span class="score-badge medium">74%</span></div>
+                            <div class="trend negative">-8%</div>
+                        </div>
+                        <div class="performance-row">
+                            <div class="agent-name">Emily Davis</div>
+                            <div>167</div>
+                            <div><span class="score-badge medium">71%</span></div>
+                            <div class="trend negative">-12%</div>
+                        </div>
+                        <div class="performance-row">
+                            <div class="agent-name">James Wilson</div>
+                            <div>134</div>
+                            <div><span class="score-badge low">65%</span></div>
+                            <div class="trend negative">-15%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal-btn" data-modal="investigateModal">Close</button>
+                <button class="btn-primary">Generate Action Plan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Training Modal -->
+    <div class="modal" id="trainingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Training Plan</h2>
+                <button class="modal-close" data-modal="trainingModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="training-form">
+                    <h3 style="margin-bottom: 20px;">De-escalation Techniques Curriculum</h3>
+                    
+                    <div class="form-section">
+                        <label class="form-label">Training Name</label>
+                        <input type="text" class="form-input" value="De-escalation and Empathy Training Q1 2026" />
+                    </div>
+
+                    <div class="form-section">
+                        <label class="form-label">Training Modules</label>
+                        <div class="modules-list">
+                            <label class="module-checkbox">
+                                <input type="checkbox" checked />
+                                <div class="module-info">
+                                    <div class="module-name">Module 1: Active Listening Skills</div>
+                                    <div class="module-duration">Duration: 2 hours | Format: Interactive</div>
+                                </div>
+                            </label>
+                            <label class="module-checkbox">
+                                <input type="checkbox" checked />
+                                <div class="module-info">
+                                    <div class="module-name">Module 2: Empathy Expression Techniques</div>
+                                    <div class="module-duration">Duration: 1.5 hours | Format: Role-play</div>
+                                </div>
+                            </label>
+                            <label class="module-checkbox">
+                                <input type="checkbox" checked />
+                                <div class="module-info">
+                                    <div class="module-name">Module 3: Managing Frustrated Customers</div>
+                                    <div class="module-duration">Duration: 2.5 hours | Format: Case Studies</div>
+                                </div>
+                            </label>
+                            <label class="module-checkbox">
+                                <input type="checkbox" />
+                                <div class="module-info">
+                                    <div class="module-name">Module 4: Conflict Resolution Strategies</div>
+                                    <div class="module-duration">Duration: 2 hours | Format: Simulation</div>
+                                </div>
+                            </label>
+                            <label class="module-checkbox">
+                                <input type="checkbox" checked />
+                                <div class="module-info">
+                                    <div class="module-name">Module 5: Positive Language Patterns</div>
+                                    <div class="module-duration">Duration: 1 hour | Format: Workshop</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <label class="form-label">Target Agents</label>
+                        <div class="agent-selection">
+                            <label class="agent-checkbox">
+                                <input type="checkbox" checked />
+                                <span>Mike Chen</span>
+                                <span class="agent-note">(Sentiment: 74%, Trend: -8%)</span>
+                            </label>
+                            <label class="agent-checkbox">
+                                <input type="checkbox" checked />
+                                <span>Emily Davis</span>
+                                <span class="agent-note">(Sentiment: 71%, Trend: -12%)</span>
+                            </label>
+                            <label class="agent-checkbox">
+                                <input type="checkbox" checked />
+                                <span>James Wilson</span>
+                                <span class="agent-note">(Sentiment: 65%, Trend: -15%)</span>
+                            </label>
+                            <label class="agent-checkbox">
+                                <input type="checkbox" />
+                                <span>Sarah Johnson</span>
+                                <span class="agent-note">(Sentiment: 82%, Trend: +5%)</span>
+                            </label>
+                            <label class="agent-checkbox">
+                                <input type="checkbox" />
+                                <span>Lisa Anderson</span>
+                                <span class="agent-note">(Sentiment: 88%, Trend: +3%)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <label class="form-label">Training Timeline</label>
+                        <div class="timeline-grid">
+                            <div class="timeline-input-group">
+                                <label>Start Date</label>
+                                <input type="date" class="form-input" value="2026-02-01" />
+                            </div>
+                            <div class="timeline-input-group">
+                                <label>End Date</label>
+                                <input type="date" class="form-input" value="2026-02-28" />
+                            </div>
+                            <div class="timeline-input-group">
+                                <label>Sessions per Week</label>
+                                <select class="form-input">
+                                    <option>1 session</option>
+                                    <option selected>2 sessions</option>
+                                    <option>3 sessions</option>
+                                </select>
+                            </div>
+                            <div class="timeline-input-group">
+                                <label>Session Duration</label>
+                                <select class="form-input">
+                                    <option>1 hour</option>
+                                    <option selected>2 hours</option>
+                                    <option>3 hours</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <label class="form-label">Success Metrics</label>
+                        <div class="metrics-targets">
+                            <div class="metric-target">
+                                <span class="target-label">Target Sentiment Improvement:</span>
+                                <span class="target-value">+15%</span>
+                            </div>
+                            <div class="metric-target">
+                                <span class="target-label">Expected Completion Rate:</span>
+                                <span class="target-value">95%</span>
+                            </div>
+                            <div class="metric-target">
+                                <span class="target-label">Follow-up Assessment:</span>
+                                <span class="target-value">30 days post-training</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal-btn" data-modal="trainingModal">Cancel</button>
+                <button class="btn-primary">Create Training Plan</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* CSS Custom Properties for reusable gradients */
+        :root {
+            --gradient-positive: linear-gradient(135deg, #27ae60, #2ecc71);
+            --gradient-negative: linear-gradient(135deg, #FF0000, #CC0000);
+            --color-neutral: #95a5a6;
+        }
+
+        /* Chart Styles */
+        .sentiment-trends-chart {
+            padding: 20px;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.green {
+            background: var(--gradient-positive);
+        }
+
+        .dot.gray {
+            background: var(--color-neutral);
+        }
+
+        .dot.red {
+            background: var(--gradient-negative);
+        }
+
+        .chart-container {
+            display: flex;
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .chart-y-axis {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 12px;
+            color: #7f8c8d;
+            min-width: 40px;
+        }
+
+        .chart-area {
+            flex: 1;
+            position: relative;
+            height: 300px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .chart-grid {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .grid-line {
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .chart-svg {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+        }
+
+        .line-positive {
+            fill: none;
+            stroke: #27ae60;
+            stroke-width: 3;
+            filter: drop-shadow(0 2px 4px rgba(39, 174, 96, 0.3));
+        }
+
+        .line-neutral {
+            fill: none;
+            stroke: #95a5a6;
+            stroke-width: 3;
+            filter: drop-shadow(0 2px 4px rgba(149, 165, 166, 0.3));
+        }
+
+        .line-negative {
+            fill: none;
+            stroke: #FF0000;
+            stroke-width: 3;
+            filter: drop-shadow(0 2px 4px rgba(255, 0, 0, 0.3));
+        }
+
+        .chart-points {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            pointer-events: none;
+        }
+
+        .point {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            transform: translate(-50%, 50%);
+            animation: pointPulse 2s ease-in-out infinite;
+        }
+
+        .point.positive {
+            background: #27ae60;
+            box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7);
+        }
+
+        .point.neutral {
+            background: #95a5a6;
+            box-shadow: 0 0 0 0 rgba(149, 165, 166, 0.7);
+        }
+
+        .point.negative {
+            background: #FF0000;
+            box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+        }
+
+        @keyframes pointPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 6px rgba(39, 174, 96, 0);
+            }
+        }
+
+        .chart-x-axis {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 0 10px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        /* Modal Specific Styles */
+        .call-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            font-size: 14px;
+        }
+
+        .info-item strong {
+            color: #2c3e50;
+        }
+
+        .transcript-timeline {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .transcript-segment {
+            background: white;
+            border-left: 4px solid #95a5a6;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .transcript-segment.sentiment-positive {
+            border-left-color: #27ae60;
+        }
+
+        .transcript-segment.sentiment-neutral {
+            border-left-color: #95a5a6;
+        }
+
+        .transcript-segment.sentiment-negative {
+            border-left-color: #FF0000;
+        }
+
+        .segment-time {
+            font-size: 11px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .segment-content {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .sentiment-indicator {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .sentiment-indicator.positive {
+            background: #d5f4e6;
+            color: #27ae60;
+        }
+
+        .sentiment-indicator.neutral {
+            background: #ecf0f1;
+            color: #7f8c8d;
+        }
+
+        .sentiment-indicator.negative {
+            background: #fadbd8;
+            color: #e74c3c;
+        }
+
+        .emotion-timeline {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .timeline-bar {
+            display: flex;
+            height: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .timeline-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-segment:hover {
+            opacity: 0.8;
+        }
+
+        .timeline-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .key-moments {
+            display: grid;
+            gap: 15px;
+        }
+
+        .moment-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .moment-card.positive {
+            border-left-color: #27ae60;
+        }
+
+        .moment-time {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .moment-type {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .moment-text {
+            font-size: 14px;
+            font-style: italic;
+            color: #5a6c7d;
+            margin-bottom: 8px;
+        }
+
+        .moment-impact {
+            display: inline-block;
+            background: #d5f4e6;
+            color: #27ae60;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .score-breakdown {
+            display: grid;
+            gap: 15px;
+        }
+
+        .breakdown-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .breakdown-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .breakdown-bar {
+            background: #ecf0f1;
+            border-radius: 8px;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .breakdown-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            transition: width 0.5s ease;
+        }
+
+        .breakdown-fill.positive {
+            background: var(--gradient-positive);
+        }
+
+        .breakdown-fill.neutral {
+            background: var(--color-neutral);
+        }
+
+        .breakdown-fill.negative {
+            background: var(--gradient-negative);
+        }
+
+        /* Analysis Modal Styles */
+        .effectiveness-chart {
+            display: grid;
+            gap: 15px;
+        }
+
+        .effectiveness-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .phrase-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .effectiveness-bar {
+            background: #ecf0f1;
+            border-radius: 8px;
+            height: 35px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .effectiveness-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            transition: width 0.5s ease;
+        }
+
+        .opening-impact {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .impact-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .impact-card {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .impact-type {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .impact-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .impact-label {
+            font-size: 12px;
+            color: #95a5a6;
+        }
+
+        .impact-arrow {
+            font-size: 24px;
+            color: #95a5a6;
+        }
+
+        .correlation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .correlation-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .correlation-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .correlation-icon {
+            font-size: 24px;
+        }
+
+        .correlation-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .correlation-stat {
+            font-size: 28px;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 5px;
+        }
+
+        .correlation-detail {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        /* Investigate Modal Styles */
+        .comparison-chart {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .comparison-bars {
+            display: grid;
+            gap: 30px;
+        }
+
+        .comparison-group {
+            display: grid;
+            gap: 10px;
+        }
+
+        .comparison-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .bar-container {
+            display: grid;
+            gap: 8px;
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .bar-month {
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        .bar-wrapper {
+            background: #e0e0e0;
+            border-radius: 6px;
+            height: 28px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            transition: width 0.5s ease;
+        }
+
+        .bar.green {
+            background: var(--gradient-positive);
+        }
+
+        .bar.gray {
+            background: var(--color-neutral);
+        }
+
+        .bar.red-gradient {
+            background: var(--gradient-negative);
+        }
+
+        .comparison-change {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .comparison-change.positive {
+            color: #27ae60;
+        }
+
+        .comparison-change.negative {
+            color: #e74c3c;
+        }
+
+        .comparison-change.neutral {
+            color: #95a5a6;
+        }
+
+        .triggers-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .trigger-item {
+            display: grid;
+            grid-template-columns: 40px 1fr auto;
+            gap: 15px;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .trigger-rank {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-negative);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .trigger-content {
+            flex: 1;
+        }
+
+        .trigger-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .trigger-detail {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .trigger-count {
+            font-size: 13px;
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        .agent-performance {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .performance-table {
+            display: grid;
+            gap: 10px;
+        }
+
+        .performance-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr;
+            gap: 15px;
+            padding: 12px 15px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .performance-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr;
+            gap: 15px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 6px;
+            align-items: center;
+        }
+
+        .agent-name {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .trend {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .trend.positive {
+            color: #27ae60;
+        }
+
+        .trend.negative {
+            color: #e74c3c;
+        }
+
+        /* Training Modal Styles */
+        .training-form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-section {
+            display: grid;
+            gap: 10px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .modules-list {
+            display: grid;
+            gap: 10px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .module-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .module-checkbox:hover {
+            background: #e8f4f8;
+        }
+
+        .module-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .module-info {
+            flex: 1;
+        }
+
+        .module-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .module-duration {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .agent-selection {
+            display: grid;
+            gap: 10px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .agent-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .agent-checkbox:hover {
+            background: #e8f4f8;
+        }
+
+        .agent-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .agent-note {
+            margin-left: auto;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .timeline-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .timeline-input-group label {
+            font-size: 13px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .metrics-targets {
+            display: grid;
+            gap: 12px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .metric-target {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .target-label {
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .target-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: #27ae60;
+        }
+
+        /* Modal Animation */
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal.active .modal-content {
+            animation: modalFadeIn 0.3s ease;
+        }
+    </style>
+
     <script src="js/app.js"></script>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const hamburger = document.querySelector('.hamburger-menu');
+            sidebar.classList.toggle('expanded');
+            hamburger.classList.toggle('active');
+        }
+
+        // Call Details Modal Functions
+        function openCallDetailsModal(callId, agent, dateTime, duration, sentiment, sentimentScore, qualityScore) {
+            const modal = document.getElementById('callDetailsModal');
+            document.getElementById('callId').textContent = '#' + callId;
+            document.getElementById('callAgent').textContent = agent;
+            document.getElementById('callDateTime').textContent = dateTime;
+            document.getElementById('callDuration').textContent = duration;
+            
+            const sentimentBadge = document.getElementById('callSentiment');
+            sentimentBadge.textContent = sentiment + ' (' + sentimentScore + ')';
+            sentimentBadge.className = 'sentiment-badge ' + sentiment.toLowerCase();
+            
+            const scoreBadge = document.getElementById('callScore');
+            scoreBadge.textContent = qualityScore;
+            const scoreValue = parseInt(qualityScore, 10);
+            if (scoreValue >= 90) {
+                scoreBadge.className = 'score-badge high';
+            } else if (scoreValue >= 75) {
+                scoreBadge.className = 'score-badge medium';
+            } else {
+                scoreBadge.className = 'score-badge low';
+            }
+            
+            modal.classList.add('active');
+            modal.style.display = 'flex';
+        }
+
+        function closeCallDetailsModal() {
+            const modal = document.getElementById('callDetailsModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Analysis Modal Functions
+        function openAnalysisModal() {
+            const modal = document.getElementById('analysisModal');
+            modal.classList.add('active');
+            modal.style.display = 'flex';
+        }
+
+        function closeAnalysisModal() {
+            const modal = document.getElementById('analysisModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Investigate Modal Functions
+        function openInvestigateModal() {
+            const modal = document.getElementById('investigateModal');
+            modal.classList.add('active');
+            modal.style.display = 'flex';
+        }
+
+        function closeInvestigateModal() {
+            const modal = document.getElementById('investigateModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Training Modal Functions
+        function openTrainingModal() {
+            const modal = document.getElementById('trainingModal');
+            modal.classList.add('active');
+            modal.style.display = 'flex';
+        }
+
+        function closeTrainingModal() {
+            const modal = document.getElementById('trainingModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners to View Details buttons
+            document.querySelectorAll('.view-details-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    openCallDetailsModal(
+                        this.dataset.callId,
+                        this.dataset.agent,
+                        this.dataset.datetime,
+                        this.dataset.duration,
+                        this.dataset.sentiment,
+                        this.dataset.sentimentScore,
+                        this.dataset.qualityScore
+                    );
+                });
+            });
+
+            // Add event listeners to insight buttons
+            const viewAnalysisBtn = document.getElementById('viewAnalysisBtn');
+            if (viewAnalysisBtn) {
+                viewAnalysisBtn.addEventListener('click', openAnalysisModal);
+            }
+
+            const investigateBtn = document.getElementById('investigateBtn');
+            if (investigateBtn) {
+                investigateBtn.addEventListener('click', openInvestigateModal);
+            }
+
+            const createTrainingBtn = document.getElementById('createTrainingBtn');
+            if (createTrainingBtn) {
+                createTrainingBtn.addEventListener('click', openTrainingModal);
+            }
+
+            // Modal close functions mapping
+            const closeFunctions = {
+                'callDetailsModal': closeCallDetailsModal,
+                'analysisModal': closeAnalysisModal,
+                'investigateModal': closeInvestigateModal,
+                'trainingModal': closeTrainingModal
+            };
+
+            // Add event listeners to all modal close buttons
+            document.querySelectorAll('.modal-close, .close-modal-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const modalId = this.dataset.modal;
+                    if (modalId && closeFunctions[modalId]) {
+                        closeFunctions[modalId]();
+                    }
+                });
+            });
+
+            // Close modals on background click
+            const modals = ['callDetailsModal', 'analysisModal', 'investigateModal', 'trainingModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.addEventListener('click', function(e) {
+                        if (e.target === this && closeFunctions[modalId]) {
+                            closeFunctions[modalId]();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

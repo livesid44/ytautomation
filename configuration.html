@@ -7,40 +7,71 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu" onclick="toggleSidebar()" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <div class="container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="logo">
-                <h2>QA Analytics</h2>
-                <p>AI-Powered Platform</p>
-            </div>
-            <nav class="nav-menu">
-                <a href="index.html" class="nav-item">
-                    <span class="icon">📊</span>
+        <aside class="sidebar" id="sidebar">
+<nav class="nav-menu">
+                <a href="index.html" class="nav-item" title="Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    </span>
                     <span>Dashboard</span>
                 </a>
-                <a href="dashboards.html" class="nav-item">
+                <a href="dashboards.html" class="nav-item" title="Quality Dashboards">
                     <span class="icon">📈</span>
                     <span>Quality Dashboards</span>
                 </a>
-                <a href="sentiment-analysis.html" class="nav-item">
+                <a href="qa-dashboard.html" class="nav-item" title="CSO Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </span>
+                    <span>QA Dashboard</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item" title="Sentiment Analysis">
                     <span class="icon">😊</span>
                     <span>Sentiment Analysis</span>
                 </a>
-                <a href="form-designer.html" class="nav-item">
+                <a href="form-designer.html" class="nav-item" title="Form Designer">
                     <span class="icon">📝</span>
                     <span>Form Designer</span>
                 </a>
-                <a href="call-audit.html" class="nav-item">
+                <a href="call-audit.html" class="nav-item" title="Call Audit">
                     <span class="icon">📞</span>
                     <span>Call Audit</span>
                 </a>
-                <a href="tni-module.html" class="nav-item">
+                <a href="my-bin-qa.html" class="nav-item" title="My Bin QA">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    </span>
+                    <span>My Bin QA</span>
+                </a>
+                <a href="hitl-dashboard.html" class="nav-item" title="HITL Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7-6h4v2h-4zm0 4h4v2h-4zm0 4h4v2h-4z"/></svg>
+                    </span>
+                    <span>HITL Dashboard</span>
+                </a>
+                <a href="ai-audit-config.html" class="nav-item" title="AI Audit Config">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                    </span>
+                    <span>AI Audit Config</span>
+                </a>
+                <a href="tni-module.html" class="nav-item" title="TNI Module">
                     <span class="icon">🎓</span>
                     <span>TNI Module</span>
                 </a>
-                <a href="configuration.html" class="nav-item active">
-                    <span class="icon">⚙️</span>
+                <a href="configuration.html" class="nav-item" title="Configuration active">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94L14.4 2.81c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    </span>
                     <span>Configuration</span>
                 </a>
             </nav>
@@ -240,6 +271,15 @@
 
                         <div class="integrations-grid">
                             <div class="integration-card">
+                                <div class="integration-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                </div>
+                                <h3>Google CCAI</h3>
+                                <p>Contact Center AI integration for intelligent call handling and transcription</p>
+                                <span class="status-badge success">Connected</span>
+                                <button class="btn-secondary btn-block" onclick="openCCAIModal()">Configure</button>
+                            </div>
+                            <div class="integration-card">
                                 <div class="integration-icon">☁️</div>
                                 <h3>Cloud Storage</h3>
                                 <p>Store call recordings and transcripts</p>
@@ -276,6 +316,58 @@
                     <div class="config-section">
                         <h2>AI & Automation Settings</h2>
                         <p class="section-description">Configure artificial intelligence and automation features</p>
+
+                        <div class="config-card">
+                            <div class="config-header">
+                                <h3>AI Model Selection</h3>
+                            </div>
+                            <div class="config-form">
+                                <div class="form-group">
+                                    <label>Large Language Model (LLM)</label>
+                                    <select class="form-control">
+                                        <option>GPT-4 Turbo</option>
+                                        <option selected>GPT-4</option>
+                                        <option>GPT-3.5 Turbo</option>
+                                        <option>Claude 3 Opus</option>
+                                        <option>Claude 3 Sonnet</option>
+                                        <option>Gemini Pro</option>
+                                        <option>PaLM 2</option>
+                                    </select>
+                                    <small>Select the AI model for natural language processing and quality evaluation</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Translation Model</label>
+                                    <select class="form-control">
+                                        <option selected>Google Cloud Translation API v3</option>
+                                        <option>Azure Translator</option>
+                                        <option>Amazon Translate</option>
+                                        <option>DeepL Pro API</option>
+                                    </select>
+                                    <small>Choose translation service for multilingual support</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Language Support</label>
+                                    <select class="form-control" multiple size="8" style="height: auto;">
+                                        <option selected>English</option>
+                                        <option selected>Spanish</option>
+                                        <option selected>French</option>
+                                        <option selected>German</option>
+                                        <option selected>Chinese (Simplified)</option>
+                                        <option selected>Chinese (Traditional)</option>
+                                        <option selected>Japanese</option>
+                                        <option selected>Korean</option>
+                                        <option>Arabic</option>
+                                        <option>Portuguese</option>
+                                        <option>Russian</option>
+                                        <option>Italian</option>
+                                        <option>Hindi</option>
+                                        <option>Indonesian</option>
+                                        <option>Polish</option>
+                                    </select>
+                                    <small>Hold Ctrl/Cmd to select multiple languages. Selected languages will be available for analysis and translation.</small>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="config-card">
                             <div class="config-header">
@@ -488,6 +580,120 @@
         </main>
     </div>
 
+    <!-- Google CCAI Configuration Modal -->
+    <div id="ccaiModal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2>Google CCAI Integration Configuration</h2>
+                <button class="modal-close" onclick="closeCCAIModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="config-form">
+                    <div class="form-group">
+                        <label>Project ID</label>
+                        <input type="text" class="form-control" placeholder="your-gcp-project-id" value="qa-analytics-prod">
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <select class="form-control">
+                            <option>global</option>
+                            <option selected>us-central1</option>
+                            <option>us-east1</option>
+                            <option>europe-west1</option>
+                            <option>asia-northeast1</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input type="password" class="form-control" placeholder="AIzaSy..." value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Service Account JSON</label>
+                        <textarea class="form-control" rows="6" placeholder='{"type": "service_account", "project_id": "..."}'></textarea>
+                        <small>Upload or paste your Google Cloud service account credentials</small>
+                    </div>
+                    <div class="form-group">
+                        <label>CCAI Agent ID</label>
+                        <input type="text" class="form-control" placeholder="projects/.../agents/..." value="projects/qa-analytics-prod/locations/us-central1/agents/12345">
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            Enable Real-time Transcription
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            Enable Sentiment Analysis
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            Enable Intent Detection
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeCCAIModal()">Cancel</button>
+                <button class="btn-primary" onclick="testCCAIConnection()">Test Connection</button>
+                <button class="btn-primary" onclick="saveCCAIConfig()">Save Configuration</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/app.js"></script>
+
+
+    <script>
+
+
+        function toggleSidebar() {
+
+
+            const sidebar = document.getElementById('sidebar');
+
+
+            const hamburger = document.querySelector('.hamburger-menu');
+
+
+            sidebar.classList.toggle('expanded');
+
+
+            hamburger.classList.toggle('active');
+
+
+        }
+
+        // Google CCAI Modal Functions
+        function openCCAIModal() {
+            document.getElementById('ccaiModal').style.display = 'flex';
+        }
+
+        function closeCCAIModal() {
+            document.getElementById('ccaiModal').style.display = 'none';
+        }
+
+        function testCCAIConnection() {
+            alert('Testing Google CCAI connection...\n\nConnection Status: Success ✓\nAPI Version: v3\nLatency: 45ms');
+        }
+
+        function saveCCAIConfig() {
+            alert('Google CCAI configuration saved successfully!');
+            closeCCAIModal();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('ccaiModal');
+            if (event.target == modal) {
+                closeCCAIModal();
+            }
+        }
+
+
+    </script>
 </body>
 </html>

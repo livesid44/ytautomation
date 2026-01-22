@@ -7,40 +7,71 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu" onclick="toggleSidebar()" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <div class="container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="logo">
-                <h2>QA Analytics</h2>
-                <p>AI-Powered Platform</p>
-            </div>
-            <nav class="nav-menu">
-                <a href="index.html" class="nav-item">
-                    <span class="icon">📊</span>
+        <aside class="sidebar" id="sidebar">
+<nav class="nav-menu">
+                <a href="index.html" class="nav-item" title="Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    </span>
                     <span>Dashboard</span>
                 </a>
-                <a href="dashboards.html" class="nav-item">
+                <a href="dashboards.html" class="nav-item" title="Quality Dashboards">
                     <span class="icon">📈</span>
                     <span>Quality Dashboards</span>
                 </a>
-                <a href="sentiment-analysis.html" class="nav-item">
+                <a href="qa-dashboard.html" class="nav-item" title="CSO Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </span>
+                    <span>QA Dashboard</span>
+                </a>
+                <a href="sentiment-analysis.html" class="nav-item" title="Sentiment Analysis">
                     <span class="icon">😊</span>
                     <span>Sentiment Analysis</span>
                 </a>
-                <a href="form-designer.html" class="nav-item">
+                <a href="form-designer.html" class="nav-item" title="Form Designer">
                     <span class="icon">📝</span>
                     <span>Form Designer</span>
                 </a>
-                <a href="call-audit.html" class="nav-item active">
+                <a href="call-audit.html" class="nav-item" title="Call Audit active">
                     <span class="icon">📞</span>
                     <span>Call Audit</span>
                 </a>
-                <a href="tni-module.html" class="nav-item">
+                <a href="my-bin-qa.html" class="nav-item" title="My Bin QA">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    </span>
+                    <span>My Bin QA</span>
+                </a>
+                <a href="hitl-dashboard.html" class="nav-item" title="HITL Dashboard">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7-6h4v2h-4zm0 4h4v2h-4zm0 4h4v2h-4z"/></svg>
+                    </span>
+                    <span>HITL Dashboard</span>
+                </a>
+                <a href="ai-audit-config.html" class="nav-item" title="AI Audit Config">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                    </span>
+                    <span>AI Audit Config</span>
+                </a>
+                <a href="tni-module.html" class="nav-item" title="TNI Module">
                     <span class="icon">🎓</span>
                     <span>TNI Module</span>
                 </a>
-                <a href="configuration.html" class="nav-item">
-                    <span class="icon">⚙️</span>
+                <a href="configuration.html" class="nav-item" title="Configuration">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94L14.4 2.81c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    </span>
                     <span>Configuration</span>
                 </a>
             </nav>
@@ -148,7 +179,7 @@
                                 <td><span class="status-badge success">Reviewed</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12453">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12453">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row" data-call-id="12452">
@@ -163,7 +194,7 @@
                                 <td><span class="status-badge success">Reviewed</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12452">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12452">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row" data-call-id="12451">
@@ -178,7 +209,7 @@
                                 <td><span class="status-badge warning">Pending</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12451">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12451">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row flagged" data-call-id="12450">
@@ -193,7 +224,7 @@
                                 <td><span class="status-badge danger">Flagged</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12450">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12450">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row" data-call-id="12449">
@@ -208,7 +239,7 @@
                                 <td><span class="status-badge success">Reviewed</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12449">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12449">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row" data-call-id="12448">
@@ -223,7 +254,7 @@
                                 <td><span class="status-badge success">Reviewed</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12448">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12448">Details</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -236,6 +267,349 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Quality Evaluation Modal -->
+    <div class="modal" id="evaluationModal">
+        <div class="modal-content transcript-modal">
+            <div class="modal-header">
+                <h2>Quality Evaluation - Call <span id="evalCallId">#12453</span></h2>
+                <button class="modal-close" onclick="closeEvaluationModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <style>
+                    .evaluation-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 13px;
+                    }
+
+                    .evaluation-table th,
+                    .evaluation-table td {
+                        border: 1px solid #ccc;
+                        padding: 10px;
+                        text-align: left;
+                        vertical-align: middle;
+                    }
+
+                    .evaluation-table thead th {
+                        background-color: #6c757d;
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .cx-driver-cell {
+                        width: 220px;
+                        color: white;
+                        font-weight: bold;
+                        padding: 20px;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+
+                    .cx-driver-cell.effectiveness {
+                        background-color: #CC0000;
+                    }
+
+                    .cx-driver-cell.effort {
+                        background-color: #4A90E2;
+                    }
+
+                    .cx-driver-cell.engagement {
+                        background-color: #D4A017;
+                    }
+
+                    .cx-driver-cell.business-critical {
+                        background-color: #2E7D32;
+                    }
+
+                    .cx-driver-cell.compliance-critical {
+                        background-color: #1B5E20;
+                    }
+
+                    .cx-driver-title {
+                        font-size: 16px;
+                        margin-bottom: 8px;
+                        text-transform: uppercase;
+                    }
+
+                    .cx-driver-description {
+                        font-size: 12px;
+                        font-weight: normal;
+                        line-height: 1.4;
+                    }
+
+                    .competency-cell {
+                        background-color: #e0e0e0;
+                        width: 180px;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .behaviour-cell {
+                        background-color: #f5f5f5;
+                        padding: 12px;
+                    }
+
+                    .checkbox-cell {
+                        width: 80px;
+                        background-color: #f9f9f9;
+                        text-align: center;
+                    }
+
+                    .checkbox-group {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        align-items: flex-start;
+                    }
+
+                    .checkbox-label {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        font-size: 12px;
+                        color: #666;
+                    }
+
+                    .checkbox-label input[type="checkbox"] {
+                        margin: 0;
+                    }
+
+                    .section-header-row {
+                        background-color: #2c3e50;
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                </style>
+                <div class="evaluation-form-container" style="max-height: 600px; overflow-y: auto;">
+                    <table class="evaluation-table">
+                        <thead>
+                            <tr>
+                                <th>CX driver</th>
+                                <th>Competencies</th>
+                                <th>Behaviours</th>
+                                <th>Response</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- EFFECTIVENESS Section -->
+                            <tr>
+                                <td rowspan="3" class="cx-driver-cell effectiveness">
+                                    <div class="cx-driver-title">EFFECTIVENESS</div>
+                                    <div class="cx-driver-description">Have we helped the creator with their goal/issue?</div>
+                                </td>
+                                <td class="competency-cell">Accuracy</td>
+                                <td class="behaviour-cell">Did the creator receive an accurate and complete solution for all the informed issues ?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q1" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q1" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q1" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="competency-cell">Tailoring</td>
+                                <td class="behaviour-cell">Were the issues or expectations of the creator met with the right level of personalization?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q2" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q2" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q2" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="behaviour-cell">Has the creator been equipped with relevant navigation opportunities and next steps?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q3" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q3" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q3" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- EFFORT Section -->
+                            <tr>
+                                <td rowspan="5" class="cx-driver-cell effort">
+                                    <div class="cx-driver-title">EFFORT</div>
+                                    <div class="cx-driver-description">How much effort was it for the partner to get a resolution?</div>
+                                </td>
+                                <td class="competency-cell">Responsiveness</td>
+                                <td class="behaviour-cell">Have we set and/or kept expectations with regards to timely and proactive follow-up communications?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q4" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q4" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q4" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="competency-cell">Understand the Creator and their concerns</td>
+                                <td class="behaviour-cell">Did we reduce creators effort by effectively connecting them with the right internal teams?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q5" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q5" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q5" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="behaviour-cell"><em>Consults and hives</em><br>Did we minimise creators effort by following correct workflows?<br><em>Workflows</em></td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q6" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q6" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q6" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="competency-cell">Feedback</td>
+                                <td class="behaviour-cell">Was the creator reassured that their feedback was captured and addressed?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q7" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q7" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q7" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="behaviour-cell">Was the creator appropriately asked to provide feedback through a CSAT survey?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q8" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q8" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q8" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- ENGAGEMENT Section -->
+                            <tr>
+                                <td rowspan="3" class="cx-driver-cell engagement">
+                                    <div class="cx-driver-title">ENGAGEMENT</div>
+                                    <div class="cx-driver-description">How did we make the creator feel during their interaction?</div>
+                                </td>
+                                <td class="competency-cell">Clarity</td>
+                                <td class="behaviour-cell">Has creator received clear communication by the use of correct language and effective questioning?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q9" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q9" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q9" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Empathy</td>
+                                <td class="behaviour-cell">Was the creator reassured that there was a clear understanding of the goal or problem, urgency and sensitivities?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q10" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q10" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q10" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Tone</td>
+                                <td class="behaviour-cell">Did the creator receive consistently professional and respectful communications?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q11" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q11" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q11" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Business Critical Section -->
+                            <tr>
+                                <td colspan="4" class="section-header-row">Business Critical</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="cx-driver-cell business-critical">
+                                    <div class="cx-driver-title">BUSINESS CRITICAL</div>
+                                </td>
+                                <td class="competency-cell">Due Diligence</td>
+                                <td class="behaviour-cell">Has the agent correctly followed due diligence process workflows?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q12" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q12" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q12" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Issue Tagging (Neo Categorization)</td>
+                                <td class="behaviour-cell">Was the correct neo category assigned by the agent for reporting and business evaluation?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q13" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q13" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q13" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Compliance Critical Section -->
+                            <tr>
+                                <td colspan="4" class="section-header-row">Compliance Critical</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="cx-driver-cell compliance-critical">
+                                    <div class="cx-driver-title">COMPLIANCE CRITICAL</div>
+                                </td>
+                                <td class="competency-cell">Authentication</td>
+                                <td class="behaviour-cell">The agent followed the Authentication / Authorization process as documented in the KB</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q14" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q14" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q14" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Keep YouTube Safe</td>
+                                <td class="behaviour-cell">Did the agent adhere to YouTube Policy Guideline?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q15" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q15" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q15" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Policy</td>
+                                <td class="behaviour-cell">Did not put Google and YouTube at legal risk</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q16" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q16" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q16" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeEvaluationModal()">Close</button>
+                <button class="btn-primary">Save Evaluation</button>
+            </div>
+        </div>
     </div>
 
     <!-- Transcript Viewer Modal -->
@@ -414,5 +788,52 @@
     </div>
 
     <script src="js/app.js"></script>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const hamburger = document.querySelector('.hamburger-menu');
+            sidebar.classList.toggle('expanded');
+            hamburger.classList.toggle('active');
+        }
+
+        // Evaluation Modal Functions
+        function openEvaluationModal(callId) {
+            const modal = document.getElementById('evaluationModal');
+            document.getElementById('evalCallId').textContent = '#' + callId;
+            modal.style.display = 'flex';
+            
+            // Randomly check one checkbox for each of the 16 questions
+            for (let i = 1; i <= 16; i++) {
+                const checkboxes = document.querySelectorAll(`input[name="q${i}"]`);
+                // Uncheck all first
+                checkboxes.forEach(cb => cb.checked = false);
+                // Randomly select one (0=Yes, 1=NA, 2=No)
+                const randomIndex = Math.floor(Math.random() * 3);
+                checkboxes[randomIndex].checked = true;
+            }
+        }
+
+        function closeEvaluationModal() {
+            document.getElementById('evaluationModal').style.display = 'none';
+        }
+
+        // Add event listeners for Details buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.view-evaluation').forEach(button => {
+                button.addEventListener('click', function() {
+                    const callId = this.getAttribute('data-call');
+                    openEvaluationModal(callId);
+                });
+            });
+
+            // Close modal on background click
+            document.getElementById('evaluationModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeEvaluationModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
