@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Total Audit Count | QA Analytics</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Inline icon styles for critical icons */
+        .icon-up::before { content: "▲"; color: #28a745; margin-right: 4px; font-size: 10px; }
+        .icon-search::before { content: "🔍"; margin-right: 4px; }
+        .icon-chart::before { content: "📊"; margin-right: 4px; }
+        .icon-book::before { content: "📚"; margin-right: 4px; }
+        .icon-file::before { content: "📄"; margin-right: 4px; }
+    </style>
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -64,7 +71,7 @@
                 <img class="sys-logo" src="images/logo-dark.png" alt="Logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+                <span class="navbar-toggler-icon">☰</span>
             </button>
             <div class="collapse navbar-collapse" id="mynavbar">
                 <label class="logo me-auto"></label>
@@ -98,28 +105,28 @@
                     <div class="grey-dark">
                         <div>Customer Critical</div>
                         <label class="dark-text">95%</label>
-                        <label class="light-text"><i class="bi bi-caret-up-fill"></i> 0.6pp MoM</label>
+                        <label class="light-text"><span class="icon-up"></span> 0.6pp MoM</label>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="grey-dark">
                         <div>Business Critical</div>
                         <label class="dark-text">90%</label>
-                        <label class="light-text"><i class="bi bi-caret-up-fill"></i> 0.9pp MoM</label>
+                        <label class="light-text"><span class="icon-up"></span> 0.9pp MoM</label>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="grey-dark">
                         <div>Compliance Critical</div>
                         <label class="dark-text">100%</label>
-                        <label class="light-text"><i class="bi bi-caret-up-fill"></i> 0.0pp MoM</label>
+                        <label class="light-text"><span class="icon-up"></span> 0.0pp MoM</label>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="grey-dark">
                         <div>Overall Score</div>
                         <label class="dark-text">87.5%</label>
-                        <label class="light-text"><i class="bi bi-caret-up-fill"></i> 3.2% from last month</label>
+                        <label class="light-text"><span class="icon-up"></span> 3.2% from last month</label>
                     </div>
                 </div>
             </div>
@@ -187,28 +194,28 @@
                 </div>
                 <div class="col-md-3">
                     <a href="call-audit.html" class="action-card-enterprise">
-                        <i class="bi bi-search action-icon-enterprise"></i>
+                        <div class="action-icon-enterprise"><span class="icon-search"></span></div>
                         <h3>Review Calls</h3>
                         <p>Audit and analyze call quality</p>
                     </a>
                 </div>
                 <div class="col-md-3">
                     <a href="dashboards.html" class="action-card-enterprise">
-                        <i class="bi bi-bar-chart-line action-icon-enterprise"></i>
+                        <div class="action-icon-enterprise"><span class="icon-chart"></span></div>
                         <h3>Quality Dashboards</h3>
                         <p>View detailed analytics</p>
                     </a>
                 </div>
                 <div class="col-md-3">
                     <a href="tni-module.html" class="action-card-enterprise">
-                        <i class="bi bi-book action-icon-enterprise"></i>
+                        <div class="action-icon-enterprise"><span class="icon-book"></span></div>
                         <h3>Training Plans</h3>
                         <p>Manage agent training</p>
                     </a>
                 </div>
                 <div class="col-md-3">
                     <a href="form-designer.html" class="action-card-enterprise">
-                        <i class="bi bi-file-earmark-text action-icon-enterprise"></i>
+                        <div class="action-icon-enterprise"><span class="icon-file"></span></div>
                         <h3>Form Designer</h3>
                         <p>Create evaluation forms</p>
                     </a>
