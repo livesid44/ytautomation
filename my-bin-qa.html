@@ -930,7 +930,7 @@
         }
 
         function updatePagination() {
-            document.querySelector('.page-info strong').textContent = currentPage;
+            document.querySelector('.page-info strong:first-child').textContent = currentPage;
             document.getElementById('prevBtn').disabled = currentPage === 1;
             document.getElementById('nextBtn').disabled = currentPage === totalPages;
         }
