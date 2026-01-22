@@ -3,18 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total Audit Count | QA Analytics</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Inline icon styles for critical icons */
-        .icon-up::before { content: "▲"; color: #28a745; margin-right: 4px; font-size: 10px; }
-        .icon-search::before { content: "🔍"; margin-right: 4px; }
-        .icon-chart::before { content: "📊"; margin-right: 4px; }
-        .icon-book::before { content: "📚"; margin-right: 4px; }
-        .icon-file::before { content: "📄"; margin-right: 4px; }
-    </style>
+    <title>totalauditcount | YT Automation</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -101,148 +95,184 @@
             </div>
             <hr />
 
-            <!-- Key Metrics -->
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="grey-dark">
-                        <div>Customer Critical</div>
-                        <label class="dark-text">95%</label>
-                        <label class="light-text"><span class="icon-up"></span> 0.6pp MoM</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="grey-dark">
-                        <div>Business Critical</div>
-                        <label class="dark-text">90%</label>
-                        <label class="light-text"><span class="icon-up"></span> 0.9pp MoM</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="grey-dark">
-                        <div>Compliance Critical</div>
-                        <label class="dark-text">100%</label>
-                        <label class="light-text"><span class="icon-up"></span> 0.0pp MoM</label>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="grey-dark">
-                        <div>Overall Score</div>
-                        <label class="dark-text">87.5%</label>
-                        <label class="light-text"><span class="icon-up"></span> 3.2% from last month</label>
-                    </div>
-                </div>
-            </div>
+            <!-- Tab Navigation -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#Quality1">T1 Quality Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#Quality2">T2 Quality Overview</a>
+                </li>
+            </ul>
 
-            <div class="clear-20"></div>
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <div id="Quality1" class="tab-pane active">
+                    <div class="grey-bg">
+                        <div class="row flex-row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="grey-dark">
+                                            <div>Customer Critical</div>
+                                            <label class="dark-text">95%</label>
+                                            <label class="light-text"><i class="bi bi-caret-up-fill"></i> 0.6pp MoM</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="grey-dark">
+                                            <div>Business Critical</div>
+                                            <label class="dark-text">90%</label>
+                                            <label class="light-text"><i class="bi bi-caret-up-fill"></i> 0.9pp MoM</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="grey-dark mt-3">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label class="dark-text2">Compliance<br/>Critical</label>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="float-end">
+                                                        <div><label class="dark-text">100%</label></div>
+                                                        <div><label class="light-text"><i class="bi bi-caret-up-fill"></i> 0.00pp MoM</label></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="chart-main">
+                                    <label class="title-blue">T1 Quality Overview</label>
+                                    <div id="chart-container">
+                                        <canvas id="chart1"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear-20"></div>
+                    <div class="grey-bg-op">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>Customer Critical –</b> 95% pass rate (+0.6pp MoM)
+                                <p>Scores are on target week on week, reaching 95.4% pass rate on the week starting on January 15, 2026, demonstrating consistent quality performance.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <b>Business Critical –</b> 90% pass rate (+0.9pp MoM)
+                                <p>Scores are improving with strong performance in case workflow and categorization. Main strengths include proper hold procedures and check-in protocols.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mt-2 mb-2">
+                                    <b>Case Workflow pass rate is at 94.54%. Top strengths are identified as follows:</b>
+                                </div>
+                                <ul>
+                                    <li>Hold procedure – Agents maintaining hold times within the maximum five minutes and checking in with partners appropriately.</li>
+                                    <li>Check-in process – Agents adhering to check-in process guidelines (2+1 rule and 5+2+1 rule).</li>
+                                    <li>Response time – Agents responding to messages promptly within established timeframes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Quality Overview -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="chart-main">
-                        <label class="chart-title">Quality Score Trends</label>
-                        <div id="chart-container"></div>
+                <div id="Quality2" class="tab-pane fade">
+                    <div class="grey-bg">
+                        <div class="row flex-row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="grey-dark">
+                                            <div>Customer Critical</div>
+                                            <label class="dark-text">93%</label>
+                                            <label class="light-text"><i class="bi bi-caret-down-fill"></i> 2.0pp MoM</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="grey-dark">
+                                            <div>Business Critical</div>
+                                            <label class="dark-text">88%</label>
+                                            <label class="light-text"><i class="bi bi-caret-down-fill"></i> 2.0pp MoM</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="grey-dark mt-3">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label class="dark-text2">Compliance<br/>Critical</label>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="float-end">
+                                                        <div><label class="dark-text">98%</label></div>
+                                                        <div><label class="light-text"><i class="bi bi-caret-down-fill"></i> 2.00pp MoM</label></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="chart-main">
+                                    <label class="title-blue">T2 Quality Overview</label>
+                                    <div id="chart-container2">
+                                        <canvas id="chart2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="chart-main">
-                        <label class="chart-title">Category Distribution</label>
-                        <div id="chart-container2"></div>
+                    <div class="clear-20"></div>
+                    <div class="grey-bg-op">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>Customer Critical –</b> 93% pass rate (-2.0pp MoM)
+                                <p>Slight decrease in performance requiring attention to customer service fundamentals and training reinforcement.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <b>Business Critical –</b> 88% pass rate (-2.0pp MoM)
+                                <p>Performance dip requires focused training on business processes and workflow adherence.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="clear-20"></div>
-
-            <!-- Detailed Analysis -->
-            <div class="grey-bg-op">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="title-blue">Quality Analysis Summary</h3>
-                    </div>
-                    <div class="col-md-6">
-                        <b>Customer Critical –</b> 95% pass rate (+0.6pp MoM)
-                        <p>Scores are consistently on target, demonstrating excellent customer service quality across all touchpoints. Key strengths include professional greeting, active listening, and problem resolution.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <b>Business Critical –</b> 90% pass rate (+0.9pp MoM)
-                        <p>Strong performance in business metrics with improvements in call handling procedures and workflow adherence. Continue monitoring case categorization and documentation quality.</p>
-                    </div>
-                    <div class="col-md-12 mt-3">
-                        <b>Top Performance Areas:</b>
-                        <ul>
-                            <li>Professional greeting and introduction - 96% compliance</li>
-                            <li>Active listening and empathy - 94% compliance</li>
-                            <li>Problem resolution effectiveness - 92% compliance</li>
-                            <li>Proper call documentation - 89% compliance</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-12 mt-3">
-                        <b>Areas for Improvement:</b>
-                        <ul>
-                            <li>Call workflow adherence - Focus on hold procedures and check-in protocols</li>
-                            <li>Case categorization accuracy - Ensure correct request and resolution types</li>
-                            <li>Compliance with policies - Regular training on updated guidelines</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="clear-20"></div>
-
-            <!-- Quick Actions -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="title2">Quick Actions</h2>
-                </div>
-                <div class="col-md-3">
-                    <a href="call-audit.html" class="action-card-enterprise">
-                        <div class="action-icon-enterprise"><span class="icon-search"></span></div>
-                        <h3>Review Calls</h3>
-                        <p>Audit and analyze call quality</p>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="dashboards.html" class="action-card-enterprise">
-                        <div class="action-icon-enterprise"><span class="icon-chart"></span></div>
-                        <h3>Quality Dashboards</h3>
-                        <p>View detailed analytics</p>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="tni-module.html" class="action-card-enterprise">
-                        <div class="action-icon-enterprise"><span class="icon-book"></span></div>
-                        <h3>Training Plans</h3>
-                        <p>Manage agent training</p>
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="form-designer.html" class="action-card-enterprise">
-                        <div class="action-icon-enterprise"><span class="icon-file"></span></div>
-                        <h3>Form Designer</h3>
-                        <p>Create evaluation forms</p>
-                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="js/app.js"></script>
     <script>
-        // Chart placeholders - Charts would be initialized here with a library like Chart.js
+        // Chart placeholders - ready for Chart.js integration
         document.addEventListener('DOMContentLoaded', function() {
-            const chartContainer1 = document.getElementById('chart-container');
-            if (chartContainer1 && !chartContainer1.querySelector('canvas')) {
-                chartContainer1.innerHTML = '<div style="text-align:center; color:#999;">Quality Score Trends Chart<br><small>Chart visualization would appear here</small></div>';
+            // Placeholder for T1 Quality Chart
+            const chartCanvas1 = document.getElementById('chart1');
+            if (chartCanvas1) {
+                const ctx = chartCanvas1.getContext('2d');
+                ctx.fillStyle = '#f8f9fa';
+                ctx.fillRect(0, 0, chartCanvas1.width, chartCanvas1.height);
+                ctx.fillStyle = '#6c757d';
+                ctx.font = '16px Poppins-Regular';
+                ctx.textAlign = 'center';
+                ctx.fillText('T1 Quality Trends Chart', chartCanvas1.width / 2, chartCanvas1.height / 2 - 10);
+                ctx.font = '12px Poppins-Regular';
+                ctx.fillText('Chart.js visualization would appear here', chartCanvas1.width / 2, chartCanvas1.height / 2 + 10);
             }
             
-            const chartContainer2 = document.getElementById('chart-container2');
-            if (chartContainer2 && !chartContainer2.querySelector('canvas')) {
-                chartContainer2.innerHTML = '<div style="text-align:center; color:#999;">Category Distribution Chart<br><small>Chart visualization would appear here</small></div>';
+            // Placeholder for T2 Quality Chart
+            const chartCanvas2 = document.getElementById('chart2');
+            if (chartCanvas2) {
+                const ctx = chartCanvas2.getContext('2d');
+                ctx.fillStyle = '#f8f9fa';
+                ctx.fillRect(0, 0, chartCanvas2.width, chartCanvas2.height);
+                ctx.fillStyle = '#6c757d';
+                ctx.font = '16px Poppins-Regular';
+                ctx.textAlign = 'center';
+                ctx.fillText('T2 Quality Trends Chart', chartCanvas2.width / 2, chartCanvas2.height / 2 - 10);
+                ctx.font = '12px Poppins-Regular';
+                ctx.fillText('Chart.js visualization would appear here', chartCanvas2.width / 2, chartCanvas2.height / 2 + 10);
             }
         });
     </script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
 </body>
 </html>

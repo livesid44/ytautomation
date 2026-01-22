@@ -2247,6 +2247,14 @@ input:checked + .toggle-slider:before {
     margin-bottom: 15px;
 }
 
+.title-blue {
+    color: #1a2e61;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+}
+
 .chart-title {
     color: #1a2e61;
     font-weight: bold;
@@ -2258,6 +2266,8 @@ input:checked + .toggle-slider:before {
 #chart-container,
 #chart-container2 {
     width: 100%;
+    height: 200px;
+}
     height: 200px;
     display: flex;
     align-items: center;
