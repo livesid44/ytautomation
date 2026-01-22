@@ -119,9 +119,40 @@ body {
     z-index: 100;
 }
 
-.header h1 {
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.sys-logo {
+    height: 45px;
+}
+
+.micro-logo {
+    height: 20px;
+    border-left: 1px solid #ffffff;
+    padding-left: 15px;
+}
+
+.page-header {
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 4px;
+    margin: 20px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header h1 {
     font-size: 24px;
-    color: #ffffff;
+    color: #333;
     font-weight: 600;
 }
 
