@@ -1815,7 +1815,7 @@
             
             const scoreBadge = document.getElementById('callScore');
             scoreBadge.textContent = qualityScore;
-            const scoreValue = parseInt(qualityScore);
+            const scoreValue = parseInt(qualityScore, 10);
             if (scoreValue >= 90) {
                 scoreBadge.className = 'score-badge high';
             } else if (scoreValue >= 75) {
