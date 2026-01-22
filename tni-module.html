@@ -88,6 +88,315 @@
             </div>
 
             <div class="content">
+                <!-- Data Visualizations Dashboard -->
+                <style>
+                    .viz-section {
+                        margin-bottom: 30px;
+                    }
+                    
+                    .viz-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 20px;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .viz-card {
+                        background: white;
+                        border-radius: 8px;
+                        padding: 20px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    }
+                    
+                    .viz-card h3 {
+                        margin: 0 0 20px 0;
+                        color: #2c3e50;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+                    
+                    .bar-chart {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                    }
+                    
+                    .bar-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    
+                    .bar-label {
+                        width: 150px;
+                        font-size: 0.85rem;
+                        color: #555;
+                        font-weight: 500;
+                    }
+                    
+                    .bar-container {
+                        flex: 1;
+                        height: 30px;
+                        background: #f0f0f0;
+                        border-radius: 4px;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .bar-fill {
+                        height: 100%;
+                        background: linear-gradient(135deg, #FF0000 0%, #CC0000 50%, #990000 100%);
+                        border-radius: 4px;
+                        transition: width 0.3s ease;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        padding-right: 8px;
+                        color: white;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                    }
+                    
+                    .bar-value {
+                        min-width: 50px;
+                        text-align: right;
+                        font-size: 0.85rem;
+                        font-weight: 600;
+                        color: #CC0000;
+                    }
+                    
+                    .trend-chart {
+                        height: 250px;
+                        position: relative;
+                        border: 1px solid #e0e0e0;
+                        border-radius: 4px;
+                        padding: 20px;
+                        background: linear-gradient(to bottom, #fafafa 0%, white 100%);
+                    }
+                    
+                    .trend-line {
+                        position: relative;
+                        height: 180px;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: space-between;
+                        gap: 10px;
+                    }
+                    
+                    .trend-bar {
+                        flex: 1;
+                        background: linear-gradient(180deg, #FF0000 0%, #CC0000 50%, #990000 100%);
+                        border-radius: 4px 4px 0 0;
+                        position: relative;
+                        min-width: 40px;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .trend-bar:hover {
+                        opacity: 0.8;
+                        transform: translateY(-5px);
+                    }
+                    
+                    .trend-bar-label {
+                        position: absolute;
+                        bottom: -25px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 0.75rem;
+                        color: #666;
+                        white-space: nowrap;
+                    }
+                    
+                    .trend-bar-value {
+                        position: absolute;
+                        top: -20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 0.75rem;
+                        font-weight: bold;
+                        color: #CC0000;
+                    }
+                    
+                    .priority-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 15px;
+                    }
+                    
+                    .priority-item {
+                        background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+                        border-left: 4px solid #CC0000;
+                        padding: 15px;
+                        border-radius: 4px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                    }
+                    
+                    .priority-rank {
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+                        color: white;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 30px;
+                        font-weight: bold;
+                        margin-bottom: 8px;
+                    }
+                    
+                    .priority-title {
+                        font-weight: 600;
+                        color: #2c3e50;
+                        font-size: 0.9rem;
+                        margin-bottom: 5px;
+                    }
+                    
+                    .priority-impact {
+                        font-size: 0.75rem;
+                        color: #666;
+                    }
+                    
+                    .priority-impact-value {
+                        font-weight: bold;
+                        color: #CC0000;
+                    }
+                </style>
+                
+                <div class="viz-section">
+                    <h2>Training Performance Analytics</h2>
+                    <div class="viz-grid">
+                        <!-- Agent Performance Gaps -->
+                        <div class="viz-card">
+                            <h3>📊 Performance Gaps by Parameter</h3>
+                            <div class="bar-chart">
+                                <div class="bar-item">
+                                    <div class="bar-label">Call Opening</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 85%;">-17%</div>
+                                    </div>
+                                    <div class="bar-value">-17%</div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">Product Knowledge</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 80%;">-16%</div>
+                                    </div>
+                                    <div class="bar-value">-16%</div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">Documentation</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 45%;">-9%</div>
+                                    </div>
+                                    <div class="bar-value">-9%</div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">Objection Handling</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 30%;">-6%</div>
+                                    </div>
+                                    <div class="bar-value">-6%</div>
+                                </div>
+                                <div class="bar-item">
+                                    <div class="bar-label">Call Closing</div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="width: 10%;">-2%</div>
+                                    </div>
+                                    <div class="bar-value">-2%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Training Effectiveness Trend -->
+                        <div class="viz-card">
+                            <h3>📈 Training Effectiveness Over Time</h3>
+                            <div class="trend-chart">
+                                <div class="trend-line">
+                                    <div class="trend-bar" style="height: 45%;">
+                                        <div class="trend-bar-value">+8%</div>
+                                        <div class="trend-bar-label">Jan W1</div>
+                                    </div>
+                                    <div class="trend-bar" style="height: 60%;">
+                                        <div class="trend-bar-value">+11%</div>
+                                        <div class="trend-bar-label">Jan W2</div>
+                                    </div>
+                                    <div class="trend-bar" style="height: 75%;">
+                                        <div class="trend-bar-value">+13%</div>
+                                        <div class="trend-bar-label">Jan W3</div>
+                                    </div>
+                                    <div class="trend-bar" style="height: 85%;">
+                                        <div class="trend-bar-value">+15%</div>
+                                        <div class="trend-bar-label">Jan W4</div>
+                                    </div>
+                                    <div class="trend-bar" style="height: 55%;">
+                                        <div class="trend-bar-value">+10%</div>
+                                        <div class="trend-bar-label">Feb W1</div>
+                                    </div>
+                                    <div class="trend-bar" style="height: 70%;">
+                                        <div class="trend-bar-value">+12%</div>
+                                        <div class="trend-bar-label">Feb W2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Training Priorities Dashboard -->
+                    <div class="viz-card">
+                        <h3>🎯 Top Training Priorities</h3>
+                        <div class="priority-grid">
+                            <div class="priority-item">
+                                <div class="priority-rank">1</div>
+                                <div class="priority-title">Call Opening & Greeting</div>
+                                <div class="priority-impact">
+                                    Gap: <span class="priority-impact-value">-17%</span> | 
+                                    Agents: <span class="priority-impact-value">23</span>
+                                </div>
+                            </div>
+                            <div class="priority-item">
+                                <div class="priority-rank">2</div>
+                                <div class="priority-title">Product Knowledge</div>
+                                <div class="priority-impact">
+                                    Gap: <span class="priority-impact-value">-16%</span> | 
+                                    Agents: <span class="priority-impact-value">18</span>
+                                </div>
+                            </div>
+                            <div class="priority-item">
+                                <div class="priority-rank">3</div>
+                                <div class="priority-title">Documentation & Follow-up</div>
+                                <div class="priority-impact">
+                                    Gap: <span class="priority-impact-value">-9%</span> | 
+                                    Agents: <span class="priority-impact-value">12</span>
+                                </div>
+                            </div>
+                            <div class="priority-item">
+                                <div class="priority-rank">4</div>
+                                <div class="priority-title">Objection Handling</div>
+                                <div class="priority-impact">
+                                    Gap: <span class="priority-impact-value">-6%</span> | 
+                                    Agents: <span class="priority-impact-value">15</span>
+                                </div>
+                            </div>
+                            <div class="priority-item">
+                                <div class="priority-rank">5</div>
+                                <div class="priority-title">Empathy & Active Listening</div>
+                                <div class="priority-impact">
+                                    Gap: <span class="priority-impact-value">-5%</span> | 
+                                    Agents: <span class="priority-impact-value">10</span>
+                                </div>
+                            </div>
+                            <div class="priority-item">
+                                <div class="priority-rank">6</div>
+                                <div class="priority-title">Call Closing</div>
+                                <div class="priority-impact">
+                                    Gap: <span class="priority-impact-value">-2%</span> | 
+                                    Agents: <span class="priority-impact-value">8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- TNI Summary -->
                 <div class="metrics-grid">
                     <div class="metric-card">

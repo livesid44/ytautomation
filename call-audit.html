@@ -161,7 +161,7 @@
                                 <td><span class="status-badge success">Reviewed</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12453">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12453">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row" data-call-id="12452">
@@ -176,7 +176,7 @@
                                 <td><span class="status-badge success">Reviewed</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12452">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12452">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row" data-call-id="12451">
@@ -191,7 +191,7 @@
                                 <td><span class="status-badge warning">Pending</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12451">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12451">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row flagged" data-call-id="12450">
@@ -206,7 +206,7 @@
                                 <td><span class="status-badge danger">Flagged</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12450">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12450">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row" data-call-id="12449">
@@ -221,7 +221,7 @@
                                 <td><span class="status-badge success">Reviewed</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12449">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12449">Details</button>
                                 </td>
                             </tr>
                             <tr class="call-row" data-call-id="12448">
@@ -236,7 +236,7 @@
                                 <td><span class="status-badge success">Reviewed</span></td>
                                 <td>
                                     <button class="btn-link view-transcript" data-call="12448">View Transcript</button>
-                                    <button class="btn-link">Details</button>
+                                    <button class="btn-link view-evaluation" data-call="12448">Details</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -249,6 +249,349 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Quality Evaluation Modal -->
+    <div class="modal" id="evaluationModal">
+        <div class="modal-content transcript-modal">
+            <div class="modal-header">
+                <h2>Quality Evaluation - Call <span id="evalCallId">#12453</span></h2>
+                <button class="modal-close" onclick="closeEvaluationModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <style>
+                    .evaluation-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 13px;
+                    }
+
+                    .evaluation-table th,
+                    .evaluation-table td {
+                        border: 1px solid #ccc;
+                        padding: 10px;
+                        text-align: left;
+                        vertical-align: middle;
+                    }
+
+                    .evaluation-table thead th {
+                        background-color: #6c757d;
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .cx-driver-cell {
+                        width: 220px;
+                        color: white;
+                        font-weight: bold;
+                        padding: 20px;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+
+                    .cx-driver-cell.effectiveness {
+                        background-color: #CC0000;
+                    }
+
+                    .cx-driver-cell.effort {
+                        background-color: #4A90E2;
+                    }
+
+                    .cx-driver-cell.engagement {
+                        background-color: #D4A017;
+                    }
+
+                    .cx-driver-cell.business-critical {
+                        background-color: #2E7D32;
+                    }
+
+                    .cx-driver-cell.compliance-critical {
+                        background-color: #1B5E20;
+                    }
+
+                    .cx-driver-title {
+                        font-size: 16px;
+                        margin-bottom: 8px;
+                        text-transform: uppercase;
+                    }
+
+                    .cx-driver-description {
+                        font-size: 12px;
+                        font-weight: normal;
+                        line-height: 1.4;
+                    }
+
+                    .competency-cell {
+                        background-color: #e0e0e0;
+                        width: 180px;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .behaviour-cell {
+                        background-color: #f5f5f5;
+                        padding: 12px;
+                    }
+
+                    .checkbox-cell {
+                        width: 80px;
+                        background-color: #f9f9f9;
+                        text-align: center;
+                    }
+
+                    .checkbox-group {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        align-items: flex-start;
+                    }
+
+                    .checkbox-label {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        font-size: 12px;
+                        color: #666;
+                    }
+
+                    .checkbox-label input[type="checkbox"] {
+                        margin: 0;
+                    }
+
+                    .section-header-row {
+                        background-color: #2c3e50;
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                </style>
+                <div class="evaluation-form-container" style="max-height: 600px; overflow-y: auto;">
+                    <table class="evaluation-table">
+                        <thead>
+                            <tr>
+                                <th>CX driver</th>
+                                <th>Competencies</th>
+                                <th>Behaviours</th>
+                                <th>Response</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- EFFECTIVENESS Section -->
+                            <tr>
+                                <td rowspan="3" class="cx-driver-cell effectiveness">
+                                    <div class="cx-driver-title">EFFECTIVENESS</div>
+                                    <div class="cx-driver-description">Have we helped the creator with their goal/issue?</div>
+                                </td>
+                                <td class="competency-cell">Accuracy</td>
+                                <td class="behaviour-cell">Did the creator receive an accurate and complete solution for all the informed issues ?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q1" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q1" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q1" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="competency-cell">Tailoring</td>
+                                <td class="behaviour-cell">Were the issues or expectations of the creator met with the right level of personalization?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q2" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q2" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q2" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="behaviour-cell">Has the creator been equipped with relevant navigation opportunities and next steps?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q3" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q3" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q3" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- EFFORT Section -->
+                            <tr>
+                                <td rowspan="5" class="cx-driver-cell effort">
+                                    <div class="cx-driver-title">EFFORT</div>
+                                    <div class="cx-driver-description">How much effort was it for the partner to get a resolution?</div>
+                                </td>
+                                <td class="competency-cell">Responsiveness</td>
+                                <td class="behaviour-cell">Have we set and/or kept expectations with regards to timely and proactive follow-up communications?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q4" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q4" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q4" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="competency-cell">Understand the Creator and their concerns</td>
+                                <td class="behaviour-cell">Did we reduce creators effort by effectively connecting them with the right internal teams?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q5" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q5" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q5" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="behaviour-cell"><em>Consults and hives</em><br>Did we minimise creators effort by following correct workflows?<br><em>Workflows</em></td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q6" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q6" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q6" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="competency-cell">Feedback</td>
+                                <td class="behaviour-cell">Was the creator reassured that their feedback was captured and addressed?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q7" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q7" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q7" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="behaviour-cell">Was the creator appropriately asked to provide feedback through a CSAT survey?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q8" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q8" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q8" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- ENGAGEMENT Section -->
+                            <tr>
+                                <td rowspan="3" class="cx-driver-cell engagement">
+                                    <div class="cx-driver-title">ENGAGEMENT</div>
+                                    <div class="cx-driver-description">How did we make the creator feel during their interaction?</div>
+                                </td>
+                                <td class="competency-cell">Clarity</td>
+                                <td class="behaviour-cell">Has creator received clear communication by the use of correct language and effective questioning?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q9" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q9" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q9" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Empathy</td>
+                                <td class="behaviour-cell">Was the creator reassured that there was a clear understanding of the goal or problem, urgency and sensitivities?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q10" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q10" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q10" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Tone</td>
+                                <td class="behaviour-cell">Did the creator receive consistently professional and respectful communications?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q11" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q11" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q11" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Business Critical Section -->
+                            <tr>
+                                <td colspan="4" class="section-header-row">Business Critical</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="cx-driver-cell business-critical">
+                                    <div class="cx-driver-title">BUSINESS CRITICAL</div>
+                                </td>
+                                <td class="competency-cell">Due Diligence</td>
+                                <td class="behaviour-cell">Has the agent correctly followed due diligence process workflows?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q12" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q12" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q12" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Issue Tagging (Neo Categorization)</td>
+                                <td class="behaviour-cell">Was the correct neo category assigned by the agent for reporting and business evaluation?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q13" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q13" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q13" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Compliance Critical Section -->
+                            <tr>
+                                <td colspan="4" class="section-header-row">Compliance Critical</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="cx-driver-cell compliance-critical">
+                                    <div class="cx-driver-title">COMPLIANCE CRITICAL</div>
+                                </td>
+                                <td class="competency-cell">Authentication</td>
+                                <td class="behaviour-cell">The agent followed the Authentication / Authorization process as documented in the KB</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q14" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q14" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q14" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Keep YouTube Safe</td>
+                                <td class="behaviour-cell">Did the agent adhere to YouTube Policy Guideline?</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q15" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q15" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q15" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="competency-cell">Policy</td>
+                                <td class="behaviour-cell">Did not put Google and YouTube at legal risk</td>
+                                <td class="checkbox-cell">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label"><input type="checkbox" name="q16" value="yes"> Yes</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q16" value="na"> NA</label>
+                                        <label class="checkbox-label"><input type="checkbox" name="q16" value="no"> No</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeEvaluationModal()">Close</button>
+                <button class="btn-primary">Save Evaluation</button>
+            </div>
+        </div>
     </div>
 
     <!-- Transcript Viewer Modal -->
@@ -428,28 +771,51 @@
 
     <script src="js/app.js"></script>
 
-
     <script>
-
-
         function toggleSidebar() {
-
-
             const sidebar = document.getElementById('sidebar');
-
-
             const hamburger = document.querySelector('.hamburger-menu');
-
-
             sidebar.classList.toggle('expanded');
-
-
             hamburger.classList.toggle('active');
-
-
         }
 
+        // Evaluation Modal Functions
+        function openEvaluationModal(callId) {
+            const modal = document.getElementById('evaluationModal');
+            document.getElementById('evalCallId').textContent = '#' + callId;
+            modal.style.display = 'flex';
+            
+            // Randomly check one checkbox for each of the 16 questions
+            for (let i = 1; i <= 16; i++) {
+                const checkboxes = document.querySelectorAll(`input[name="q${i}"]`);
+                // Uncheck all first
+                checkboxes.forEach(cb => cb.checked = false);
+                // Randomly select one (0=Yes, 1=NA, 2=No)
+                const randomIndex = Math.floor(Math.random() * 3);
+                checkboxes[randomIndex].checked = true;
+            }
+        }
 
+        function closeEvaluationModal() {
+            document.getElementById('evaluationModal').style.display = 'none';
+        }
+
+        // Add event listeners for Details buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.view-evaluation').forEach(button => {
+                button.addEventListener('click', function() {
+                    const callId = this.getAttribute('data-call');
+                    openEvaluationModal(callId);
+                });
+            });
+
+            // Close modal on background click
+            document.getElementById('evaluationModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeEvaluationModal();
+                }
+            });
+        });
     </script>
 </body>
 </html>
