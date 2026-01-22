@@ -501,14 +501,6 @@ body {
     border-bottom-color: #667eea;
 }
 
-.tab-pane {
-    display: none;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
 /* Dashboard Grid */
 .dashboard-grid {
     display: grid;
