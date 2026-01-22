@@ -410,7 +410,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Call Details - <span id="callId">#12453</span></h2>
-                <button class="modal-close" onclick="closeCallDetailsModal()">&times;</button>
+                <button class="modal-close" data-modal="callDetailsModal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="call-info-grid">
@@ -523,7 +523,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeCallDetailsModal()">Close</button>
+                <button class="btn-secondary close-modal-btn" data-modal="callDetailsModal">Close</button>
                 <button class="btn-primary">Download Report</button>
             </div>
         </div>
@@ -534,7 +534,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Sentiment Pattern Analysis</h2>
-                <button class="modal-close" onclick="closeAnalysisModal()">&times;</button>
+                <button class="modal-close" data-modal="analysisModal">&times;</button>
             </div>
             <div class="modal-body">
                 <h3 style="margin-bottom: 20px;">Empathy Phrases Effectiveness</h3>
@@ -625,7 +625,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeAnalysisModal()">Close</button>
+                <button class="btn-secondary close-modal-btn" data-modal="analysisModal">Close</button>
                 <button class="btn-primary">Export Analysis</button>
             </div>
         </div>
@@ -636,7 +636,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Technical Support Sentiment Investigation</h2>
-                <button class="modal-close" onclick="closeInvestigateModal()">&times;</button>
+                <button class="modal-close" data-modal="investigateModal">&times;</button>
             </div>
             <div class="modal-body">
                 <h3 style="margin-bottom: 20px;">Sentiment Comparison: Current vs Previous Month</h3>
@@ -772,7 +772,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeInvestigateModal()">Close</button>
+                <button class="btn-secondary close-modal-btn" data-modal="investigateModal">Close</button>
                 <button class="btn-primary">Generate Action Plan</button>
             </div>
         </div>
@@ -783,7 +783,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Create Training Plan</h2>
-                <button class="modal-close" onclick="closeTrainingModal()">&times;</button>
+                <button class="modal-close" data-modal="trainingModal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="training-form">
@@ -916,7 +916,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn-secondary" onclick="closeTrainingModal()">Cancel</button>
+                <button class="btn-secondary close-modal-btn" data-modal="trainingModal">Cancel</button>
                 <button class="btn-primary">Create Training Plan</button>
             </div>
         </div>
@@ -1914,8 +1914,7 @@
                 createTrainingBtn.addEventListener('click', openTrainingModal);
             }
 
-            // Close modals on background click
-            const modals = ['callDetailsModal', 'analysisModal', 'investigateModal', 'trainingModal'];
+            // Modal close functions mapping
             const closeFunctions = {
                 'callDetailsModal': closeCallDetailsModal,
                 'analysisModal': closeAnalysisModal,
@@ -1923,11 +1922,23 @@
                 'trainingModal': closeTrainingModal
             };
 
+            // Add event listeners to all modal close buttons
+            document.querySelectorAll('.modal-close, .close-modal-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const modalId = this.dataset.modal;
+                    if (modalId && closeFunctions[modalId]) {
+                        closeFunctions[modalId]();
+                    }
+                });
+            });
+
+            // Close modals on background click
+            const modals = ['callDetailsModal', 'analysisModal', 'investigateModal', 'trainingModal'];
             modals.forEach(modalId => {
                 const modal = document.getElementById(modalId);
                 if (modal) {
                     modal.addEventListener('click', function(e) {
-                        if (e.target === this) {
+                        if (e.target === this && closeFunctions[modalId]) {
                             closeFunctions[modalId]();
                         }
                     });
