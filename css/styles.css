@@ -35,7 +35,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 220px;
+    width: 70px;
     background-color: #f6f6f6;
     color: #373737;
     padding: 0px;
@@ -44,12 +44,23 @@ body {
     overflow-y: auto;
     padding-top: 75px;
     z-index: 99;
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 220px;
 }
 
 .logo {
     margin: 20px 20px 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e0e0e0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .logo {
+    opacity: 1;
 }
 
 .logo h2 {
@@ -74,33 +85,51 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 25px;
+    padding: 12px 15px;
     color: #373737;
     text-decoration: none;
     transition: all 0.3s ease;
     background-color: #f2f2f2;
     font-weight: bold;
     font-size: 14px;
+    justify-content: center;
+}
+
+.sidebar:hover .nav-item {
+    justify-content: flex-start;
+    padding: 12px 25px;
 }
 
 .nav-item:hover {
-    background-color: #ebebeb;
-    color: #373737;
+    background-color: #667eea;
+    color: #ffffff;
 }
 
 .nav-item.active {
-    background-color: #ebebeb;
-    color: #373737;
+    background-color: #667eea;
+    color: #ffffff;
 }
 
 .nav-item .icon {
-    font-size: 18px;
+    font-size: 20px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.nav-item span:not(.icon) {
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .nav-item span:not(.icon) {
+    opacity: 1;
 }
 
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-left: 220px;
+    margin-left: 70px;
     background: transparent;
     padding-top: 75px;
 }
